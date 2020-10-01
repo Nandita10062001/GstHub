@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GstHub</string>
+    <string name="teacher">TEACHER</string>
+    <string name="student">Student</string>
+    <string name="guest">Guest</string>
+    <string name="alumni">alumni</string>
+    <string name="or">OR</string>
+    <string name="sign_in_using_google">Sign in using Google</string>
+    <string name="sign_in_using_outlook">Sign in using Outlook</string>
+    <string name="sign_in_as_teacher">Sign in As Teacher</string>
+    <string name="create_account_as_teacher">Create Account as Teacher</string>
+    <string name="sign_up_using_google">sign up using google</string>
+    <string name="gsthub">Gsthub</string>
+    <string name="sign_up_as_outlook">sign up as outlook</string>
+    <string name="already_have_an_account_sign_in">Already have an Account? Sign in</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up_using_outlook">Sign up using outlook</string>
+</resources>
