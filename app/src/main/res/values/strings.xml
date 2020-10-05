@@ -15,4 +15,12 @@
     <string name="already_have_an_account_sign_in">Already have an Account? Sign in</string>
     <string name="create_account">Create Account</string>
     <string name="sign_up_using_outlook">Sign up using outlook</string>
+    <string name="name">Name:</string>
+    <string name="department">Department:</string>
+    <string name="contact_no">Contact No.:</string>
+    <string name="qualifications">Qualifications:</string>
+    <string name="create_your_profile">Create your Profile</string>
+    <string name="proceed">Proceed</string>
+    <string name="my_profile">My Profile</string>
+    <string name="save">Save</string>
 </resources>

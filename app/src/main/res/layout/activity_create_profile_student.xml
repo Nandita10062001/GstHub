@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateProfileStudent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Create"
+        android:text="@string/create_your_profile"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/StudentName"
+        android:text="@string/name"
+        android:layout_below="@+id/Create"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentYear"
+        android:text="Year:"
+        android:layout_below="@+id/StudentName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentBranch"
+        android:text="Branch: "
+        android:layout_below="@+id/studentYear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentPRN"
+        android:text="PRN"
+        android:layout_below="@+id/studentBranch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/proceedButton"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/studentPRN"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/bg_round_button"/>
+
+</RelativeLayout>

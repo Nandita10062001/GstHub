@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CreateAccAlumni"></activity>
+        <activity android:name=".ProfileTeacher"></activity>
+        <activity android:name=".CreateProfileGuest" />
+        <activity android:name=".CreateProfileAlumni" />
+        <activity android:name=".CreateProfileTeacher" />
+        <activity android:name=".CreateProfileStudent" />
+        <activity android:name=".SignIn" />
+        <activity android:name=".CreateAccAlumni" />
         <activity android:name=".CreateAccGuest" />
         <activity android:name=".CreateAccStudent" />
         <activity android:name=".CreateAccTeacher" />

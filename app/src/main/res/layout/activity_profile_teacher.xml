@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileTeacher">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TeacherProfileUsername"
+        android:text="Username"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_margin="20dp"/>
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:id="@+id/TeacherProfilePhoto"
+        android:src="@drawable/ic_baseline_person_pin_24"
+        android:layout_below="@+id/TeacherProfileUsername"
+        android:layout_marginStart="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TeacherProfileName"
+        android:layout_toEndOf="@+id/TeacherProfilePhoto"
+        android:layout_below="@+id/TeacherProfileUsername"
+        android:text="Name"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginStart="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditProfileButton"
+        android:layout_below="@id/TeacherProfileName"
+        android:layout_toEndOf="@+id/TeacherProfilePhoto"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="45dp"
+        android:text="Edit Profile"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TeacherProfileDepartment"
+        android:text="Department"
+        android:layout_below="@+id/TeacherProfilePhoto"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TeacherProfileQualifications"
+        android:text="Qualifications"
+        android:layout_below="@+id/TeacherProfileDepartment"
+        android:layout_marginStart="20dp"/>
+
+
+
+
+
+</RelativeLayout>
