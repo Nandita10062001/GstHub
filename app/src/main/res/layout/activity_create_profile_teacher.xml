@@ -62,26 +62,13 @@
         android:padding="10dp"
         android:paddingStart="20dp"
         android:textColorHint="#A1A1A1"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/teacherNumber"
-        android:hint="Contact No."
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_below="@+id/teacherQualifications"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/bg_round_button"
-        android:padding="10dp"
-        android:paddingStart="20dp"
-        android:textColorHint="#A1A1A1"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/proceedButton"
         android:text="@string/save"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/teacherNumber"
+        android:layout_below="@+id/teacherQualifications"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="60dp"
