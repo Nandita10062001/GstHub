@@ -1,8 +1,10 @@
-package com.example.gsthub;
+package com.example.gsthub.createProfile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.gsthub.R;
 
 public class CreateProfileAlumni extends AppCompatActivity {
 

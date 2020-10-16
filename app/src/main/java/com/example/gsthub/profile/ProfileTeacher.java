@@ -1,14 +1,16 @@
-package com.example.gsthub;
+package com.example.gsthub.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CreateProfileGuest extends AppCompatActivity {
+import com.example.gsthub.R;
+
+public class ProfileTeacher extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_profile_guest);
+        setContentView(R.layout.activity_profile_teacher);
     }
 }

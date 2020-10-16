@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HomePage"></activity>
-        <activity android:name=".ProfileTeacher" />
-        <activity android:name=".CreateProfileGuest" />
-        <activity android:name=".CreateProfileAlumni" />
-        <activity android:name=".CreateProfileTeacher" />
-        <activity android:name=".CreateProfileStudent" />
+        <activity android:name=".profile.ProfileTeacher" />
+        <activity android:name=".createProfile.CreateProfileGuest" />
+        <activity android:name=".createProfile.CreateProfileAlumni" />
+        <activity android:name=".createProfile.CreateProfileTeacher" />
+        <activity android:name=".createProfile.CreateProfileStudent" />
         <activity android:name=".SignIn" />
-        <activity android:name=".CreateAccAlumni" />
-        <activity android:name=".CreateAccGuest" />
-        <activity android:name=".CreateAccStudent" />
-        <activity android:name=".CreateAccTeacher" />
+        <activity android:name=".account.CreateAccAlumni" />
+        <activity android:name=".account.CreateAccGuest" />
+        <activity android:name=".account.CreateAccStudent" />
+        <activity android:name=".account.CreateAccTeacher" />
         <activity android:name=".SignInAs" />
         <activity android:name=".MainActivity">
             <intent-filter>

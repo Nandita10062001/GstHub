@@ -1,14 +1,16 @@
-package com.example.gsthub;
+package com.example.gsthub.account;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CreateAccAlumni extends AppCompatActivity {
+import com.example.gsthub.R;
+
+public class CreateAccStudent extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_acc_alumni);
+        setContentView(R.layout.activity_create_acc_student);
     }
 }
