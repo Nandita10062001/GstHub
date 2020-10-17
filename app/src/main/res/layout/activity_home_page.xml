@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/bottomNavigation"
         app:menu="@menu/bottom_navigation"
+        android:background="@android:color/white"
         android:layout_alignParentBottom="true"/>
 
 
