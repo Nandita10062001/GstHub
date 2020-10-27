@@ -19,32 +19,31 @@
 
     <Button
         android:id="@+id/signInTeacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/SignInAs"
-        android:layout_centerHorizontal="true"
         android:text="@string/teacher"
-        android:layout_margin="10dp"/>
+        android:layout_marginStart="100dp"/>
     <Button
         android:id="@+id/signInStudent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/signInTeacher"
-        android:layout_centerHorizontal="true"
-        android:text="@string/student"
-        android:layout_margin="10dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/SignInAs"
+        android:layout_toEndOf="@+id/signInTeacher"
+        android:layout_marginStart="10dp"
+        android:text="@string/student"/>
     <Button
         android:id="@+id/signInAlumni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/signInStudent"
         android:layout_centerHorizontal="true"
         android:text="@string/alumni"
         android:layout_margin="10dp"/>
     <Button
         android:id="@+id/signInGuest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/signInAlumni"
         android:layout_centerHorizontal="true"
         android:text="@string/guest"
