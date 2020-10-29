@@ -25,19 +25,24 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/SignInAs"
-        android:layout_marginStart="80dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
         android:layout_marginTop="70dp"
+
         android:background="#524255"
         android:text="@string/teacher"
         android:textColor="#FFFFFF" />
 
     <Button
+
         android:id="@+id/signInStudent"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/SignInAs"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="70dp"
-        android:layout_toEndOf="@+id/signInTeacher"
+        android:layout_marginEnd="85dp"
         android:background="#90E91E63"
         android:text="@string/student"
         android:textColor="#FFFFFF" />
@@ -47,7 +52,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/signInTeacher"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
         android:background="#C63C85A6"
         android:text="@string/alumni"
         android:textColor="#FFFFFF" />
@@ -57,7 +64,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@id/signInStudent"
-        android:layout_toEndOf="@+id/signInAlumni"
+
+        android:layout_marginTop="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="85dp"
+
         android:background="#673AB7"
         android:text="@string/guest"
         android:textColor="#FFFFFF" />

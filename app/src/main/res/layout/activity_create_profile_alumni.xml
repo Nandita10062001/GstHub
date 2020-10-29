@@ -13,51 +13,98 @@
         android:text="@string/create_your_profile"
         android:textStyle="bold"
         android:textSize="30sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alumniName"
-        android:text="@string/name"
+        android:layout_margin="20dp"/>
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/alumniPhoto"
+        android:src="@drawable/ic_baseline_person_pin_24"
         android:layout_below="@+id/Create"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginTop="20dp"/>
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/alumniName"
+        android:hint="@string/name"
+        android:layout_below="@+id/alumniPhoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_round_button"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:textColorHint="#A1A1A1"/>
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/yearOfPassout"
-        android:text="Year of passing out"
+        android:hint="Year of passing out"
         android:layout_below="@+id/alumniName"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_round_button"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:textColorHint="#A1A1A1"/>
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/alumniBranch"
-        android:text="Branch: "
+        android:hint="Branch"
         android:layout_below="@+id/yearOfPassout"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_round_button"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:textColorHint="#A1A1A1"/>
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/alumniNumber"
-        android:text="@string/contact_no"
-        android:layout_below="@+id/alumniBranch"
+        android:hint="Contact Number"
+        android:layout_below="@+id/alumniTeams"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_round_button"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:textColorHint="#A1A1A1"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/alumniTeams"
+        android:hint="Former college teams"
+        android:layout_below="@id/alumniBranch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_round_button"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:textColorHint="#A1A1A1"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/proceedButton"
-        android:text="@string/proceed"
+        android:text="@string/save"
         android:textColor="@android:color/white"
         android:layout_below="@+id/alumniNumber"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="60dp"
+        android:textSize="21sp"
         android:background="@drawable/bg_round_button"/>
 
 
