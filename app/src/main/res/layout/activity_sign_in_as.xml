@@ -4,49 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#121720"
     tools:context=".SignInAs">
 
     <TextView
+        android:id="@+id/SignInAs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SignInAs"
-        android:text="Sign Up As?"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
         android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:text="Sign Up As?"
+        android:textColor="#FFFFFF"
+
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/signInTeacher"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/SignInAs"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="70dp"
+        android:background="#524255"
         android:text="@string/teacher"
-        android:layout_marginStart="100dp"/>
+        android:textColor="#FFFFFF" />
+
     <Button
         android:id="@+id/signInStudent"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/SignInAs"
+        android:layout_marginTop="70dp"
         android:layout_toEndOf="@+id/signInTeacher"
-        android:layout_marginStart="10dp"
-        android:text="@string/student"/>
+        android:background="#90E91E63"
+        android:text="@string/student"
+        android:textColor="#FFFFFF" />
+
     <Button
         android:id="@+id/signInAlumni"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/signInStudent"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/signInTeacher"
+        android:layout_marginStart="80dp"
+        android:background="#C63C85A6"
         android:text="@string/alumni"
-        android:layout_margin="10dp"/>
+        android:textColor="#FFFFFF" />
+
     <Button
         android:id="@+id/signInGuest"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/signInAlumni"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@id/signInStudent"
+        android:layout_toEndOf="@+id/signInAlumni"
+        android:background="#673AB7"
         android:text="@string/guest"
-        android:layout_margin="10dp"/>
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
