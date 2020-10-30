@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Forum2"></activity>
+        <activity android:name=".account.CreateAccount"></activity>
+        <activity android:name=".Forum2" />
         <activity android:name=".HomePage2" />
         <activity android:name=".Forum" />
         <activity android:name=".Classroom" />
@@ -21,10 +22,6 @@
         <activity android:name=".createProfile.CreateProfileTeacher" />
         <activity android:name=".createProfile.CreateProfileStudent" />
         <activity android:name=".SignIn" />
-        <activity android:name=".account.CreateAccAlumni" />
-        <activity android:name=".account.CreateAccGuest" />
-        <activity android:name=".account.CreateAccStudent" />
-        <activity android:name=".account.CreateAccTeacher" />
         <activity android:name=".SignInAs" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.gsthub.R;
 
-public class CreateAccTeacher extends AppCompatActivity {
+public class CreateAccount extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_acc_teacher);
+        setContentView(R.layout.activity_create_accounts);
     }
 }

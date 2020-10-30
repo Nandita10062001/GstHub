@@ -7,10 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.gsthub.account.CreateAccAlumni;
-import com.example.gsthub.account.CreateAccGuest;
-import com.example.gsthub.account.CreateAccStudent;
-import com.example.gsthub.account.CreateAccTeacher;
+import com.example.gsthub.account.CreateAccount;
 
 public class SignInAs extends AppCompatActivity {
     Button teacher,student,alumni,guest;
@@ -40,14 +37,14 @@ public class SignInAs extends AppCompatActivity {
         alumni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateAccAlumni.class);
+                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
                 startActivity(intent);
             }
         });
         guest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateAccGuest.class);
+                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
                 startActivity(intent);
             }
         });
