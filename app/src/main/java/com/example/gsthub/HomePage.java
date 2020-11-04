@@ -42,10 +42,6 @@ public class HomePage extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.Home:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        finish();
-                        overridePendingTransition(0,0);
-                        return;
 
                     case R.id.Classroom:
                         startActivity(new Intent(getApplicationContext(),Classroom.class));

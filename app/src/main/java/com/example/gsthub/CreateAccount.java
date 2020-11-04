@@ -8,30 +8,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
-
-public class SignIn extends AppCompatActivity {
+public class CreateAccount extends AppCompatActivity {
     Button signIn;
-    TextView createacc;
+    TextView alreadyacc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
-        signIn = findViewById(R.id.signinButton);
-        createacc = findViewById(R.id.createacc);
+        setContentView(R.layout.activity_create_account);
+        signIn = findViewById(R.id.signupButton);
+        alreadyacc = findViewById(R.id.alreadyacc);
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(getApplicationContext(), HomePage.class);
+                Intent intent =  new Intent(getApplicationContext(), SignInAs.class);
                 startActivity(intent);
             }
         });
-        createacc.setOnClickListener(new View.OnClickListener() {
+        alreadyacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+                Intent intent = new Intent(getApplicationContext(), SignIn.class);
                 startActivity(intent);
             }
         });

@@ -76,7 +76,7 @@
         android:background="@drawable/bg_text_button"
         android:backgroundTint="#E43F5A"
         android:fontFamily="sans-serif"
-        android:text="Sign up"
+        android:text="Sign in"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
@@ -106,14 +106,16 @@
         android:textColor="#A1A1A1" />
 
     <TextView
-        android:id="@+id/alreadyacc"
+        android:id="@+id/createacc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/GoogleSignIn"
         android:layout_marginTop="80dp"
         android:text="Don't have an account? Create one!"
-        android:textColor="#9FFFFFFF" />
+        android:textColor="#9FFFFFFF"
+        android:clickable="true"
+        android:focusable="true"/>
 
 
 </RelativeLayout>

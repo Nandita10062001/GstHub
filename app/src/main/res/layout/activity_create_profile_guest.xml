@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".createProfile.CreateProfileGuest">
+    tools:context=".createProfile.CreateProfileGuest"
+    android:background="#121720">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +14,8 @@
         android:text="@string/create_your_profile"
         android:textStyle="bold"
         android:textSize="30sp"
-        android:layout_margin="20dp" />
+        android:layout_margin="20dp"
+        android:textColor="@android:color/white"/>
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
@@ -31,12 +33,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/bg_round_button"
+        android:layout_marginStart="60dp"
+        android:background="@drawable/bg_text_button"
         android:padding="10dp"
         android:paddingStart="20dp"
-        android:textColorHint="#A1A1A1"/>
+        android:textColorHint="#A1A1A1"
+        android:textColor="@android:color/white"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,13 +49,13 @@
         android:layout_marginBottom="20dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/bg_round_button"
+        android:background="@drawable/bg_text_button"
         android:padding="10dp"
         android:paddingStart="20dp"
         android:textColorHint="#A1A1A1"
         android:ems="10"
         android:inputType="number"
-        />/>
+        android:textColor="@android:color/white" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,7 +67,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="60dp"
         android:textSize="21sp"
-        android:background="@drawable/bg_round_button"/>
+        android:background="@drawable/button_bg"/>
 
 
 

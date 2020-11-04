@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.gsthub.account.CreateAccount;
+
+import com.example.gsthub.createProfile.CreateProfileAlumni;
+import com.example.gsthub.createProfile.CreateProfileGuest;
+import com.example.gsthub.createProfile.CreateProfileTeacher;
 
 public class SignInAs extends AppCompatActivity {
     Button teacher,student,alumni,guest;
@@ -23,28 +26,28 @@ public class SignInAs extends AppCompatActivity {
         teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                Intent intent = new Intent(getApplicationContext(), CreateProfileTeacher.class);
                 startActivity(intent);
             }
         });
         student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), HomePage2.class);
+                Intent intent = new Intent(getApplicationContext(), CreateProfileTeacher.class);
                 startActivity(intent);
             }
         });
         alumni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+                Intent intent = new Intent(getApplicationContext(), CreateProfileAlumni.class);
                 startActivity(intent);
             }
         });
         guest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+                Intent intent = new Intent(getApplicationContext(), CreateProfileGuest.class);
                 startActivity(intent);
             }
         });

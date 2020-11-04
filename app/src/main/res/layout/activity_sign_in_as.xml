@@ -14,9 +14,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="10dp"
-        android:text="Sign Up As?"
+        android:text="Who are you?"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <RelativeLayout
@@ -34,7 +34,6 @@
         android:textColor="#FFFFFF" />
 
     <Button
-
         android:id="@+id/signInStudent"
         android:layout_width="100dp"
         android:layout_height="100dp"
