@@ -1,0 +1,73 @@
+Index: app/src/main/res/drawable/drawable_home_page.xml
+===================================================================
+--- app/src/main/res/drawable/drawable_home_page.xml	(revision 02d13ce6ab1e4dac92ce685e2b0b70709b33b8ef)
++++ app/src/main/res/drawable/drawable_home_page.xml	(revision 02d13ce6ab1e4dac92ce685e2b0b70709b33b8ef)
+@@ -1,26 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+-    <!-- drawable/rectangle_6.xml -->
+-    <vector xmlns:aapt="http://schemas.android.com/aapt"
+-        android:width="304dp"
+-        android:height="438dp"
+-        android:viewportWidth="304"
+-        android:viewportHeight="438"
+-        >
+-
+-        <group>
+-
+-            <clip-path
+-                android:pathData="M18 0H286C295.941 0 304 8.05887 304 18V420C304 429.941 295.941 438 286 438H18C8.05887 438 0 429.941 0 420V18C0 8.05887 8.05887 0 18 0Z"
+-                />
+-
+-            <path
+-                android:pathData="M0 0V438H304V0"
+-                android:fillColor="#1FFFFFFF"
+-                />
+-
+-        </group>
+-
+-    </vector>
+-
+-</selector>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM__Default_Changelist_.xml	(revision 02d13ce6ab1e4dac92ce685e2b0b70709b33b8ef)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM__Default_Changelist_.xml	(revision 02d13ce6ab1e4dac92ce685e2b0b70709b33b8ef)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM_[Default_Changelist]" date="1604041957323" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 30-10-2020 12:42 PM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM_[Default_Changelist]/shelved.patch	(revision 02d13ce6ab1e4dac92ce685e2b0b70709b33b8ef)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_30-10-2020_12_42_PM_[Default_Changelist]/shelved.patch	(revision 02d13ce6ab1e4dac92ce685e2b0b70709b33b8ef)
+@@ -1,26 +0,0 @@
+-Index: app/src/main/java/com/example/gsthub/SignInAs.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.gsthub;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\n\r\nimport com.example.gsthub.account.CreateAccAlumni;\r\nimport com.example.gsthub.account.CreateAccGuest;\r\nimport com.example.gsthub.account.CreateAccStudent;\r\nimport com.example.gsthub.account.CreateAccTeacher;\r\n\r\npublic class SignInAs extends AppCompatActivity {\r\n    Button teacher,student,alumni,guest;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_sign_in_as);\r\n        teacher = findViewById(R.id.signInTeacher);\r\n        student = findViewById(R.id.signInStudent);\r\n        alumni = findViewById(R.id.signInAlumni);\r\n        guest = findViewById(R.id.signInGuest);\r\n\r\n        teacher.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(getApplicationContext(), CreateAccTeacher.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n        student.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(getApplicationContext(), CreateAccStudent.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n        alumni.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(getApplicationContext(), CreateAccAlumni.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n        guest.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(getApplicationContext(), CreateAccGuest.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/gsthub/SignInAs.java	(revision 61e1ddf68c95a48bd9790d6b0648479f286ee23c)
+-+++ app/src/main/java/com/example/gsthub/SignInAs.java	(date 1603965540308)
+-@@ -26,14 +26,14 @@
+-         teacher.setOnClickListener(new View.OnClickListener() {
+-             @Override
+-             public void onClick(View view) {
+--                Intent intent = new Intent(getApplicationContext(), CreateAccTeacher.class);
+-+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+-                 startActivity(intent);
+-             }
+-         });
+-         student.setOnClickListener(new View.OnClickListener() {
+-             @Override
+-             public void onClick(View view) {
+--                Intent intent = new Intent(getApplicationContext(), CreateAccStudent.class);
+-+                Intent intent = new Intent(getApplicationContext(), HomePage2.class);
+-                 startActivity(intent);
+-             }
+-         });
