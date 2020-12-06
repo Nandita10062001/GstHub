@@ -45,7 +45,7 @@ public class CreateAccount extends AppCompatActivity {
         alreadyAcc = (TextView) findViewById(R.id.alreadyacc);
         email = findViewById(R.id.createEmailAddress);
         createPassword = findViewById(R.id.createPassword);
-        confirmPass = findViewById(R.id.confirm);
+        confirmPass = findViewById(R.id.confirmPassword);
         auth = FirebaseAuth.getInstance();
 
 

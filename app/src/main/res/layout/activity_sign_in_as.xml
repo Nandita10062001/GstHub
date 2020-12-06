@@ -1,69 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121720"
+    android:background="#fff"
     tools:context=".SignInAs">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="538dp"
+        android:layout_height="984dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/whobg" />
 
     <TextView
         android:id="@+id/SignInAs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="10dp"
-        android:text="Who are you?"
-        android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        android:textStyle="bold" />
+        android:text="What's your role?"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.328" />
+
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
 
-    <Button
-        android:id="@+id/signInTeacher"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        android:background="#524255"
-        android:text="@string/teacher"
-        android:textColor="#FFFFFF" />
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681">
 
-    <Button
-        android:id="@+id/signInStudent"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        android:layout_toEndOf="@id/signInTeacher"
-        android:background="#90E91E63"
-        android:text="@string/student"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/signInTeacher"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_who_button_1"
+            android:shadowColor="#9A3030"
+            android:text="@string/teacher"
+            android:textColor="#fff"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/signInAlumni"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        android:layout_below="@+id/signInTeacher"
-        android:background="#C63C85A6"
-        android:text="@string/alumni"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/signInStudent"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@id/signInTeacher"
+            android:background="@drawable/bg_who_buttton_3"
+            android:text="@string/student"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/signInGuest"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
-        android:layout_below="@+id/signInStudent"
-        android:layout_toEndOf="@id/signInAlumni"
-        android:background="#673AB7"
-        android:text="@string/guest"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/signInAlumni"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/signInTeacher"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_who_button_2"
+            android:text="@string/alumni"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+
+            android:id="@+id/signInGuest"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/signInStudent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@id/signInAlumni"
+            android:background="@drawable/bg_who_button_4"
+            android:text="@string/guest"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
 
     </RelativeLayout>
 
-</RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
