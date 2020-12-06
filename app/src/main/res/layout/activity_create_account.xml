@@ -62,12 +62,28 @@
         android:paddingStart="20dp"
         android:textColor="#3F51B5"
         android:textColorHint="#A1A1A1" />
+    <EditText
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/createPassword"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/bg_text_button"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:paddingStart="20dp"
+        android:textColor="#3F51B5"
+        android:textColorHint="#A1A1A1" />
 
     <Button
         android:id="@+id/signupButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/createPassword"
+        android:layout_below="@+id/confirm"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
@@ -78,33 +94,13 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/or"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/signupButton"
-        android:text="@string/or"
-        android:layout_marginBottom="50dp"
-        android:textColor="#9FFFFFFF"
-        android:textSize="15sp"
-        android:textStyle="normal|bold" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/GoogleSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/or"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="145dp"
-       />
 
     <TextView
         android:id="@+id/alreadyacc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/GoogleSignUp"
+        android:layout_below="@+id/signupButton"
         android:layout_marginTop="50dp"
         android:text="Already have an account? Sign in!"
         android:textColor="#9FFFFFFF"

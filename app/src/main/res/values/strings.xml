@@ -38,7 +38,7 @@
     <string name="drawer_close">Drawer Close</string>
 
 
-    <string name="create_acc_text"><u>Don\'t have an account? Create one!</u></string>
+    <string name="create_acc_text">Don\'t have an account? Create one!</string>
 
     <string-array name="guest_array">
         <item>Parent</item>

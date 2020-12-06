@@ -105,22 +105,14 @@
         android:textSize="15sp"
         android:textStyle="normal|bold" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/GoogleSignIn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/or"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/bg_text_button"
-        android:text="Sign in using google"
-        android:drawableLeft="@drawable/ic_google"
-        android:paddingLeft="50dp"
-        android:paddingRight="40dp"
-        android:textAlignment="center"
-        android:textColor="#A1A1A1" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="145dp"
+        />
 
     <TextView
         android:id="@+id/createacc"

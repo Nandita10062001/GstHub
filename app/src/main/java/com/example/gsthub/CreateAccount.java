@@ -33,11 +33,9 @@ import javax.crypto.KeyAgreement;
 public class CreateAccount extends AppCompatActivity {
     private Button signUp;
     private TextView alreadyAcc;
-    private EditText email, createPassword;
+    private EditText email, createPassword,confirmPass;
     private FirebaseAuth auth;
-    private SignInButton signInButton;
-    private GoogleSignInClient googleSignInClient;
-    private int RC_SIGN_IN = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,26 +45,16 @@ public class CreateAccount extends AppCompatActivity {
         alreadyAcc = (TextView) findViewById(R.id.alreadyacc);
         email = findViewById(R.id.createEmailAddress);
         createPassword = findViewById(R.id.createPassword);
+        confirmPass = findViewById(R.id.confirm);
         auth = FirebaseAuth.getInstance();
-        signInButton=findViewById(R.id.GoogleSignUp);
 
-        GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
-
-        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
-
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
-        });
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String editEmail = email.getText().toString();
                 String editPass = createPassword.getText().toString();
+                String editConfirm = confirmPass.getText().toString();
                 if(editEmail.isEmpty())
                 {
                     email.setError("Please enter your emailId!");
@@ -90,6 +78,16 @@ public class CreateAccount extends AppCompatActivity {
                 if(editEmail.isEmpty() && editPass.isEmpty())
                 {
                     Toast.makeText(CreateAccount.this,"Both the fields are empty!",Toast.LENGTH_SHORT).show();
+                }
+                if(editConfirm.isEmpty())
+                {
+                    confirmPass.setError("Please confirm your Password!");
+                    confirmPass.requestFocus();
+                }
+                else if(!editConfirm.equals(editPass))
+                {
+                    confirmPass.setError("Password does not Match!");
+                    confirmPass.requestFocus();
                 }
                 else if(!(editEmail.isEmpty() && editPass.isEmpty()))
                 {
@@ -124,65 +122,6 @@ public class CreateAccount extends AppCompatActivity {
             }
         });
     }
- private void signIn()
- {
-     Intent signInIntent = googleSignInClient.getSignInIntent();
-     startActivityForResult(signInIntent,RC_SIGN_IN);
- }
 
- @Override
- protected void onActivityResult(int requestCode,int resultCode, @Nullable Intent data)
- {
-     super.onActivityResult(requestCode,resultCode,data);
-     if(requestCode == RC_SIGN_IN)
-     {
-         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-         handleSignInResult(task);
-     }
- }
-
- private void handleSignInResult(Task<GoogleSignInAccount> completedTask)
- {
-     try {
-         GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
-         Toast.makeText(CreateAccount.this,"Signed In Successfully!",Toast.LENGTH_SHORT).show();
-         FirebaseGoogleAuth(acc);
-     }
-     catch (ApiException e)
-     {
-         Toast.makeText(CreateAccount.this,"Sign In Unsuccessful!",Toast.LENGTH_SHORT).show();
-         FirebaseGoogleAuth(null);
-     }
- }
- private void FirebaseGoogleAuth(GoogleSignInAccount acct)
- {
-     AuthCredential authc= GoogleAuthProvider.getCredential(acct.getIdToken(),null);
-     auth.signInWithCredential(authc).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-         @Override
-         public void onComplete(@NonNull Task<AuthResult> task) {
-             if(task.isSuccessful())
-             {
-                 startActivity(new Intent(getApplicationContext(),SignInAs.class));
-                 Toast.makeText(CreateAccount.this,"Successful",Toast.LENGTH_SHORT).show();
-                 FirebaseUser user = auth.getCurrentUser();
-                 updateUI(user);
-             }
-             else
-             {
-                 Toast.makeText(CreateAccount.this,"Failed!",Toast.LENGTH_SHORT).show();
-                 updateUI(null);
-             }
-         }
-     });
- }
- private void updateUI(FirebaseUser fUser)
- {
-     GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-     if(account != null)
-     {
-         String name = account.getDisplayName();
-         Toast.makeText(CreateAccount.this,"Welcome "+name+"!",Toast.LENGTH_SHORT).show();
-     }
- }
 }
 

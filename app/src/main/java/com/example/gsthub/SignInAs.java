@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.example.gsthub.createProfile.CreateProfileAlumni;
 import com.example.gsthub.createProfile.CreateProfileGuest;
+import com.example.gsthub.createProfile.CreateProfileStudent;
 import com.example.gsthub.createProfile.CreateProfileTeacher;
 
 public class SignInAs extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class SignInAs extends AppCompatActivity {
         student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateProfileTeacher.class);
+                Intent intent = new Intent(getApplicationContext(), CreateProfileStudent.class);
                 startActivity(intent);
             }
         });
