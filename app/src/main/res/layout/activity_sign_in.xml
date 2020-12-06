@@ -67,11 +67,21 @@
         android:inputType="textPassword"
         android:maxLines="1"/>
 
+    <TextView
+        android:id="@+id/resetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signinPassword"
+        android:text="Forgot Password?"
+        android:textColor="@color/White"
+       android:layout_marginStart="250dp"
+        android:layout_marginTop="20dp"/>
+
     <Button
         android:id="@+id/signinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/signinPassword"
+        android:layout_below="@+id/resetPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
@@ -106,6 +116,9 @@
         android:layout_marginEnd="25dp"
         android:background="@drawable/bg_text_button"
         android:text="Sign in using google"
+        android:drawableLeft="@drawable/ic_google"
+        android:paddingLeft="50dp"
+        android:paddingRight="40dp"
         android:textAlignment="center"
         android:textColor="#A1A1A1" />
 
@@ -115,11 +128,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/GoogleSignIn"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:text="@string/create_acc_text"
         android:textColor="#9FFFFFFF"
-        android:clickable="true"
-        android:focusable="true"/>
+        android:clickable="true" />
 
 
 </RelativeLayout>

@@ -1,19 +1,17 @@
-package com.example.gsthub.profile;
+package com.example.gsthub;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-import com.example.gsthub.R;
-
-public class ProfileStudent extends AppCompatActivity {
+public class AboutUs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_student);
-        Toolbar toolbar = findViewById(R.id.toolbar3);
+        setContentView(R.layout.activity_about_us);
+        Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
