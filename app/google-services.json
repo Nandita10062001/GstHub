@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "209661989034",
+    "firebase_url": "https://gsthub-53e65-default-rtdb.firebaseio.com",
+    "project_id": "gsthub-53e65",
+    "storage_bucket": "gsthub-53e65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209661989034:android:aeed67d35c5021d07800d3",
+        "android_client_info": {
+          "package_name": "com.example.gsthub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209661989034-kjk9eeifjltoir9lthi5r7nfsb5bo54k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gsthub",
+            "certificate_hash": "1f863319e1065dc6ff14901de4649a9d3c0472f9"
+          }
+        },
+        {
+          "client_id": "209661989034-0kcks4jl3ajf9uj1f9efmgud205oculp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-PupGUYhz_63yOSkE62u7L1VWBchG8ZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209661989034-0kcks4jl3ajf9uj1f9efmgud205oculp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,10 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Contact"
-            android:parentActivityName=".HomePage"/>
-        <activity android:name=".AboutUs"
-            android:parentActivityName=".HomePage"/>
+        <activity android:name=".RegisterGuest"></activity>
+        <activity android:name=".RegisterTeacher" />
+        <activity android:name=".RegisterAlumni" />
+        <activity android:name=".RegisterStudent" />
+        <activity
+            android:name=".Contact"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".AboutUs"
+            android:parentActivityName=".HomePage" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".Post" />
@@ -24,8 +30,9 @@
         <activity android:name=".Dashboard" />
         <activity android:name=".HomePage" />
         <activity android:name=".profile.ProfileTeacher" />
-        <activity android:name=".profile.ProfileStudent"
-            android:parentActivityName=".HomePage"/>
+        <activity
+            android:name=".profile.ProfileStudent"
+            android:parentActivityName=".HomePage" />
         <activity android:name=".profile.ProfileAlumni" />
         <activity android:name=".profile.ProfileGuest" />
         <activity android:name=".createProfile.CreateProfileGuest" />
