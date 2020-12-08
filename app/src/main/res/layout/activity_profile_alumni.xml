@@ -1,98 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile.ProfileTeacher">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/alumniProfileUsername"
-        android:text="\@Username"
-        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="Username"
         android:textSize="25sp"
-        android:layout_margin="20dp"/>
-    <ImageView
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:id="@+id/alumniProfilePhoto"
-        android:src="@drawable/ic_baseline_person_pin_24"
-        android:layout_below="@+id/alumniProfileUsername"
-        android:layout_marginStart="20dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alumniProfileName"
-        android:layout_toEndOf="@+id/alumniProfilePhoto"
-        android:layout_below="@+id/alumniProfileUsername"
-        android:text="Name"
         android:textStyle="bold"
-        android:textSize="21dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"/>
-    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/alumniProfilePhoto"
+        android:layout_width="125dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_baseline_person_pin_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alumniProfileUsername" />
+
+    <TextView
+        android:id="@+id/alumniProfileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/EditProfileButton"
-        android:layout_below="@id/alumniProfileName"
+        android:layout_below="@+id/alumniProfileUsername"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="184dp"
         android:layout_toEndOf="@+id/alumniProfilePhoto"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Edit Profile"/>
+        android:text="Name"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/EditProfileButton"
+        android:layout_width="223dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/alumniProfileName"
+        android:layout_margin="20dp"
+        android:layout_toEndOf="@+id/alumniProfilePhoto"
+        android:text="Edit Profile"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="147dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/alumniProfileBranch"
-        android:text="Branch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/alumniProfileBatchFill"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        tools:ignore="DuplicateIds" />
+        android:padding="10dp"
+        android:text="Branch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteY="238dp" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/alumniProfileBranchFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/alumniProfileBranch"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
         android:text="Name of branch"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:background="@drawable/profile_box"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/alumniProfileBranch"
+        app:layout_constraintTop_toBottomOf="@+id/alumniProfilePhoto" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/alumniProfileBatch"
-        android:text="Batch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/alumniProfilePhoto"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alumniProfileBatchFill"
-        android:layout_below="@+id/alumniProfileBatch"
+        android:padding="10dp"
         android:text="Batch"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:background="@drawable/profile_box"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alumniProfileBranch"
+        tools:ignore="MissingConstraints" />
+
     <TextView
+        android:id="@+id/alumniProfileBatchFill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/alumniProfileBatch"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
+        android:text="Batch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/alumniProfileBatch"
+        app:layout_constraintTop_toBottomOf="@+id/alumniProfileBranchFill" />
+
+    <TextView
         android:id="@+id/alumniProfileTeams"
-        android:text="Teams"
-        android:layout_below="@+id/alumniProfileBranchFill"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"/>
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/alumniProfileTeamsFill"
-        android:layout_below="@+id/alumniProfileTeams"
-        android:text="None"
-        android:layout_marginStart="20dp"
+        android:layout_below="@+id/alumniProfileBranchFill"
         android:padding="10dp"
-        android:background="@drawable/profile_box"/>
-</RelativeLayout>
+        android:text="Teams"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alumniProfileBatch"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/alumniProfileTeamsFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/alumniProfileTeams"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:padding="10dp"
+        android:text="None"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/alumniProfileTeams"
+        app:layout_constraintTop_toBottomOf="@+id/alumniProfileBatchFill" />
+</androidx.constraintlayout.widget.ConstraintLayout>

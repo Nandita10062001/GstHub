@@ -1,114 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/newPostImage"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="23dp"
-        app:srcCompat="@drawable/new_post_icon" />
 
-
-    <TextView
-        android:id="@+id/newPostText"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="20dp"
-        android:text="New Post"
-        android:textColor="@color/Black"
-        android:textSize="38sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Username"/>
+            <TextView
+                android:id="@+id/Description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Description"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_below="@+id/Username"/>
+            <TextView
+                android:id="@+id/timeStamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/Username"
+                android:text="12:00pm"
+                android:layout_margin="10dp"/>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_below="@+id/Description"/>
+            <ImageButton
+                android:id="@+id/upvote_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_below="@+id/imageView"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:id="@+id/upvote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upvote"
+                android:layout_toEndOf="@+id/upvote_button"
+                android:layout_below="@+id/imageView"
+                android:layout_marginStart="5dp"
+                android:textSize="18dp"/>
 
-    <ImageButton
-        android:id="@+id/imageAddButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/newPostText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:src="@drawable/ic_launcher_foreground"/>
-
-
-    <TextView
-        android:id="@+id/postTitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageAddButton"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="Post Title"
-        android:textSize="21sp"
-        android:textStyle="bold" />
-
-
-    <EditText
-        android:id="@+id/textTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/postTitleText"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#9A9A9A"
-        android:hint="Enter title of your post"
-        android:padding="10dp"
-        android:textColor="@color/White"
-        android:textColorHint="@color/White"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/postDescriptionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textTitle"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:text="Post Description"
-        android:textSize="18dp" />
-
-    <EditText
-        android:id="@+id/textDesc"
-        android:layout_width="match_parent"
-        android:layout_below="@id/postDescriptionText"
-        android:layout_above="@id/postBtn"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="30dp"
-        android:background="#9A9A9A"
-        android:gravity="top"
-        android:hint="Enter your post text..."
-        android:padding="10dp"
-        android:textColor="@color/White"
-        android:textColorHint="@color/White"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/postBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="30dp"
-        android:background="#9A9A9A"
-        android:text="Post"
-        android:onClick="onClick"
-        android:textColor="@color/White"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/comment_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:text="Comment"
+                android:textSize="18sp" />
 
 
-</RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
