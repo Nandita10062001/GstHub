@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Classroom extends AppCompatActivity {
@@ -32,7 +33,7 @@ public class Classroom extends AppCompatActivity {
                     case R.id.Classroom:
 
                     case R.id.Forum:
-                        startActivity(new Intent(getApplicationContext(),Forum.class));
+                        startActivity(new Intent(getApplicationContext(), Forum2.class));
                         finish();
                         overridePendingTransition(0,0);
                         finish();

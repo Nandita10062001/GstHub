@@ -1,4 +1,4 @@
-package com.example.gsthub;
+package com.example.gsthub.Forum;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.gsthub.Classroom;
+import com.example.gsthub.HomePage;
+import com.example.gsthub.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Forum extends AppCompatActivity {
@@ -24,13 +27,13 @@ public class Forum extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.Home:
-                        startActivity(new Intent(getApplicationContext(),HomePage.class));
+                        startActivity(new Intent(getApplicationContext(), HomePage.class));
                         finish();
                         overridePendingTransition(0,0);
                         return;
 
                     case R.id.Classroom:
-                        startActivity(new Intent(getApplicationContext(),Classroom.class));
+                        startActivity(new Intent(getApplicationContext(), Classroom.class));
                         finish();
                         overridePendingTransition(0,0);
                         finish();
