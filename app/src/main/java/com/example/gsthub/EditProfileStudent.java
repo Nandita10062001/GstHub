@@ -34,6 +34,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+
 public class EditProfileStudent extends AppCompatActivity {
  private ImageView img;
  FirebaseAuth auth;
@@ -54,7 +56,7 @@ public class EditProfileStudent extends AppCompatActivity {
         student = auth.getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Student");
         studentID = student.getUid();
-        SaveProfile = findViewById(R.id.EditProfileButton);
+        SaveProfile = findViewById(R.id.editProfileBtn);
         Stname = findViewById(R.id.studentNameEdit);
         Styear = findViewById(R.id.studentYearEdit);
         Stbranch = findViewById(R.id.studentBranchEdit);
@@ -99,13 +101,59 @@ public class EditProfileStudent extends AppCompatActivity {
 
             }
         });
-//      SaveProfile.setOnClickListener(new View.OnClickListener() {
-//          @Override
-//          public void onClick(View view) {
-//              on clicking on the save button, jo edit kiya hai wo text sab wo update hona chahiye firebase pe
-//          }
-//      });
-   }
+
+        SaveProfile.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View view) {
+
+                updateProfile(Stname.getText().toString(), Styear.getText().toString(),
+
+                        Stbranch.getText().toString(), Stteam.getText().toString());
+
+            }
+
+        });
+
+    }
+
+    private void updateProfile(String Stname, String Styear, String Stbranch, String Stteam) {
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student").child(student.getUid());
+
+        HashMap<String, Object> edited = new HashMap<>();
+
+        edited.put("sName", Stname);
+
+        edited.put("sYear", Styear);
+
+        edited.put("sBranch", Stbranch);
+
+        edited.put("sTeam", Stteam);
+
+
+
+        reference.updateChildren(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+            @Override
+
+            public void onSuccess(Void aVoid) {
+
+                Toast.makeText(EditProfileStudent.this, "Profile Updated", Toast.LENGTH_LONG).show();
+
+                startActivity(new Intent(getApplicationContext(), ProfileStudent.class));
+
+                finish();
+
+            }
+
+        });
+
+    }
+
+
+
 
 
     @Override
