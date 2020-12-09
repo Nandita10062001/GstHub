@@ -30,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         registerPageOneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+                Intent intent = new Intent(getApplicationContext(), SignInAs.class);
                 startActivity(intent);
             }
         });

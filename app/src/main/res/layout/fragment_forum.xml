@@ -22,13 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#D50000"
-        android:clickable="true"
-        android:focusable="true"
         android:src="@drawable/ic_baseline_add_24"
         android:layout_margin="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Create post" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

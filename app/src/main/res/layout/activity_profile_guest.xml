@@ -54,24 +54,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.395" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/GuestProfileBranch"
-        android:text="Branch"
-        android:layout_below="@+id/GuestProfilePhoto"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"/>
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/GuestProfilePhoto"
+        android:text="Branch"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="81dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
         android:id="@+id/GuestProfileBranchFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/GuestProfileBranch"
-        android:text="Name of branch"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
+        android:background="@drawable/profile_box"
         android:padding="10dp"
-        android:background="@drawable/profile_box"/>
+        android:text="Name of branch"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="29dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

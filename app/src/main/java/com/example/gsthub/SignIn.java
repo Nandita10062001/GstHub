@@ -48,7 +48,7 @@ public class SignIn extends AppCompatActivity {
         mEmail = findViewById(R.id.signinEmailAddress);
         mPassword = findViewById(R.id.signinPassword);
         mLogin = findViewById(R.id.signinButton);
-        mRegister = (TextView) findViewById(R.id.createacc);
+       mRegister = (TextView) findViewById(R.id.createacc);
         forgotPassword = findViewById(R.id.resetPassword);
 
         signInButton=(SignInButton) findViewById(R.id.GoogleSignIn);
@@ -130,7 +130,7 @@ public class SignIn extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CreateAccount.class));
+                startActivity(new Intent(getApplicationContext(), RegisterStudent.class));
             }
         });
 

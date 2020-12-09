@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".RegisterAlumni">
 
-
-    <!--    <com.airbnb.lottie.LottieAnimationView-->
-<!--        android:id="@+id/animationView"-->
-<!--        android:layout_width="237dp"-->
-<!--        android:layout_height="239dp"-->
-<!--        android:textAlignment="center"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--<com.airbnb.lottie.LottieAnimationView-->
+<!--android:id="@+id/animationView"-->
+<!-- android:layout_width="237dp"-->
+<!-- android:layout_height="239dp"-->
+<!-- android:textAlignment="center"-->
+<!-- app:layout_constraintBottom_toBottomOf="parent"-->
+<!-- app:layout_constraintEnd_toEndOf="parent"-->
+<!--  app:layout_constraintHorizontal_bias="1.0"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        app:layout_constraintVertical_bias="0.89"-->
@@ -49,13 +47,15 @@
         android:adjustViewBounds="true"
         android:background="@drawable/img_round_button"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintVertical_bias="0.247"
+        android:src="@drawable/ic_profile"/>
+
+
 
     <TextView
         android:id="@+id/SignInTitle"

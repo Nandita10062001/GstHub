@@ -16,6 +16,9 @@ import android.view.MenuItem;
 import com.example.gsthub.Forum.Forum;
 import com.example.gsthub.Forum.ForumFragment;
 import com.example.gsthub.profile.ProfileStudent;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +28,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
     FirebaseAuth mAuth;
+    private GoogleSignInClient googleSignInClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,9 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawer_open,
                 R.string.drawer_close);
 
-
+        GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
+        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
        /*drawerLayout.addDrawerListener(actionBarDrawerToggle);
        actionBarDrawerToggle.syncState();*/
 
@@ -100,6 +106,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 break;
             case R.id.logout:
                 mAuth.signOut();
+                googleSignInClient.signOut();
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                 startActivity(intent);
                 break;

@@ -1,49 +1,31 @@
 package com.example.gsthub.Forum;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gsthub.CreateAccount;
 import com.example.gsthub.R;
-import com.example.gsthub.SignIn;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.Calendar;
 
 public class CreatePost extends AppCompatActivity {
     ProgressDialog pd;
     private Button Post;
-    EditText description;
+    /*EditText description;
     FirebaseDatabase db;
     DatabaseReference ref;
     FirebaseAuth auth;
 
     Calendar cal;
     String uid;
-    String Time,Date;
+    String Time,Date;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_post);
-        Post =findViewById(R.id.postbtn);
-        pd = new ProgressDialog(this);
+        Post = findViewById(R.id.postbtn);
+        /*pd = new ProgressDialog(this);
         pd.setMessage("Loading...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
@@ -132,5 +114,6 @@ public class CreatePost extends AppCompatActivity {
             e.printStackTrace();
         }
         pd.dismiss();
+    }*/
     }
 }
