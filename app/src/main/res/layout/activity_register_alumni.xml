@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".RegisterAlumni">
 
-    <!--<com.airbnb.lottie.LottieAnimationView-->
-<!--android:id="@+id/animationView"-->
-<!-- android:layout_width="237dp"-->
-<!-- android:layout_height="239dp"-->
-<!-- android:textAlignment="center"-->
-<!-- app:layout_constraintBottom_toBottomOf="parent"-->
-<!-- app:layout_constraintEnd_toEndOf="parent"-->
-<!--  app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.89"-->
-<!--        app:lottie_autoPlay="true"-->
-<!--        app:lottie_loop="true"-->
-<!--        app:lottie_rawRes="@raw/plane" />-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="237dp"
+        android:layout_height="239dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.006"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/plane" />
 
     <TextView
         android:id="@+id/GstHub"
@@ -28,53 +35,33 @@
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/montserrat"
         android:text="Hello!"
-        android:textStyle="bold"
         android:textColor="#3a9efd"
         android:textSize="35sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
-
-    <ImageButton
-        android:id="@+id/alumniPhoto"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_below="@+id/Create"
-        android:layout_centerHorizontal="true"
-        android:adjustViewBounds="true"
-        android:background="@drawable/img_round_button"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247"
-        android:src="@drawable/ic_profile"/>
-
-
+        app:layout_constraintVertical_bias="0.215" />
 
     <TextView
         android:id="@+id/SignInTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/GstHub"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
+        android:layout_marginTop="192dp"
         android:fontFamily="@font/montserrat"
         android:text="Let's get started"
+        android:layout_marginBottom="30dp"
         android:textColor="#000"
         android:textSize="33sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.797" />
 
     <EditText
         android:id="@+id/alumniName"
@@ -220,7 +207,7 @@
 
 
     <Button
-        android:id="@+id/signupButton"
+        android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signinPassword"
@@ -231,25 +218,25 @@
         android:fontFamily="@font/montserrat"
         android:shadowColor="#2196F3"
         android:text="Register"
-
         android:textColor="#FFFFFF"
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.939" />
 
     <TextView
-        android:id="@+id/alreadyacc"
+        android:id="@+id/alreadyAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="670dp"
+        android:layout_marginBottom="20dp"
         android:clickable="true"
         android:focusable="true"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/already_have_an_account_sign_in"
         android:textColor="#A1A1A1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -257,6 +244,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

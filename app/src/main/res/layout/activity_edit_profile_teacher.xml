@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,60 +11,25 @@
         android:layout_width="130dp"
         android:layout_height="125dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:adjustViewBounds="true"
         android:background="@drawable/r_button"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_add_image"
         app:layout_constraintBottom_toTopOf="@+id/studentName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editProfileTitle" />
 
-
     <TextView
-        android:id="@+id/studentTeam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:layout_marginStart="50dp"
-        android:fontFamily="sans-serif-medium"
-        android:padding="10dp"
-        android:text="College Team"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
-
-    <EditText
-        android:id="@+id/studentTeamEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:background="@drawable/bg_round_button"
-        android:hint="NSS Unit"
-        android:padding="10dp"
-        android:shadowColor="#A1FFFFFF"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.637"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882" />
-
-    <TextView
-        android:id="@+id/studentBranch"
+        android:id="@+id/teacherQualifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:fontFamily="sans-serif-medium"
         android:padding="10dp"
-        android:text="Branch"
+        android:text="Qualifications"
         android:textSize="15sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@drawable/bg_round_button"
-        android:hint="COMPS"
+        android:hint="Masters in Data Science"
         android:padding="10dp"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -92,7 +56,7 @@
         app:layout_constraintVertical_bias="0.727" />
 
     <EditText
-        android:id="@+id/studentNameEdit"
+        android:id="@+id/teacheNameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -109,7 +73,7 @@
         app:layout_constraintVertical_bias="0.429" />
 
     <TextView
-        android:id="@+id/studentName"
+        android:id="@+id/teacherName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -125,12 +89,12 @@
         app:layout_constraintVertical_bias="0.364" />
 
     <EditText
-        android:id="@+id/studentYearEdit"
+        android:id="@+id/teacherDeptEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@drawable/bg_round_button"
-        android:hint="SE"
+        android:hint="COMPS"
         android:padding="10dp"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -142,13 +106,13 @@
         app:layout_constraintVertical_bias="0.576" />
 
     <TextView
-        android:id="@+id/studentYear"
+        android:id="@+id/teacherDept"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:fontFamily="sans-serif-medium"
         android:padding="10dp"
-        android:text="Year"
+        android:text="Department"
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -185,9 +149,9 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintVertical_bias="0.935" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
