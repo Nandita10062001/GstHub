@@ -39,6 +39,7 @@
 
 
     <string name="create_acc_text">Don\'t have an account? Create one!</string>
+    <string name="hello">Hello!</string>
 
     <string-array name="guest_array">
         <item>Parent</item>

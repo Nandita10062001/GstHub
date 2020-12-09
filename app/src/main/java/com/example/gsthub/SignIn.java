@@ -48,13 +48,16 @@ public class SignIn extends AppCompatActivity {
         mEmail = findViewById(R.id.signinEmailAddress);
         mPassword = findViewById(R.id.signinPassword);
         mLogin = findViewById(R.id.signinButton);
-        mRegister = (TextView) findViewById(R.id.createacc);
+       mRegister = (TextView) findViewById(R.id.createacc);
         forgotPassword = findViewById(R.id.resetPassword);
+
         signInButton=(SignInButton) findViewById(R.id.GoogleSignIn);
         fAuth = FirebaseAuth.getInstance();
 
         GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
 
         googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
 
@@ -127,7 +130,7 @@ public class SignIn extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CreateAccount.class));
+                startActivity(new Intent(getApplicationContext(), RegisterStudent.class));
             }
         });
 

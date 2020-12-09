@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".CreateAccount" />
-        <activity android:name=".Contact"/>
+        <activity android:name=".EditProfileStudent"></activity>
+        <activity android:name=".MainActivity2" />
+        <activity
+            android:name=".Contact"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".AboutUs"
+            android:parentActivityName=".HomePage" />
         <activity android:name=".Forum2" />
         <activity android:name=".Forum.Forum"/>
         <activity android:name=".Forum.CreatePost"/>
@@ -20,11 +25,15 @@
         <activity android:name=".Dashboard" />
         <activity android:name=".HomePage" />
         <activity android:name=".profile.ProfileTeacher" />
-        <activity android:name=".profile.ProfileStudent"/>
-        <activity android:name=".createProfile.CreateProfileGuest" />
-        <activity android:name=".createProfile.CreateProfileAlumni" />
-        <activity android:name=".createProfile.CreateProfileTeacher" />
-        <activity android:name=".createProfile.CreateProfileStudent" />
+        <activity
+            android:name=".profile.ProfileStudent"
+            android:parentActivityName=".HomePage" />
+        <activity android:name=".profile.ProfileGuest" />
+        <activity android:name=".profile.ProfileAlumni" />
+        <activity android:name=".RegisterTeacher" />
+        <activity android:name=".RegisterStudent" />
+        <activity android:name=".RegisterAlumni" />
+        <activity android:name=".RegisterGuest" />
         <activity android:name=".SignIn" />
         <activity android:name=".SignInAs" />
         <activity android:name=".MainActivity">

@@ -1,64 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile.ProfileGuest">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/GuestProfileUsername"
-        android:text="\@Username"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:layout_margin="20dp"/>
-    <ImageView
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:id="@+id/GuestProfilePhoto"
-        android:src="@drawable/ic_baseline_person_pin_24"
-        android:layout_below="@+id/GuestProfileUsername"
-        android:layout_marginStart="20dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/GuestProfileName"
-        android:layout_toEndOf="@+id/GuestProfilePhoto"
-        android:layout_below="@+id/GuestProfileUsername"
-        android:text="Name"
-        android:textStyle="bold"
-        android:textSize="21dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/EditProfileButton"
-        android:layout_below="@id/GuestProfileName"
-        android:layout_toEndOf="@+id/GuestProfilePhoto"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Edit Profile"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/GuestProfileBranch"
-        android:text="Branch"
-        android:layout_below="@+id/GuestProfilePhoto"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/GuestProfileBranchFill"
-        android:layout_below="@+id/GuestProfileBranch"
-        android:text="Name of branch"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:background="@drawable/profile_box"/>
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/GuestProfilePhoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_baseline_person_pin_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <TextView
+        android:id="@+id/GuestProfileName"
+        android:layout_width="363dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Name"
+
+        android:textAlignment="center"
+
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
+
+    <Button
+        android:id="@+id/EditProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_yellow_button"
+        android:paddingStart="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingEnd="20dp"
+        android:text="Edit Profile"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <TextView
+        android:id="@+id/GuestProfileBranch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/GuestProfilePhoto"
+        android:text="Branch"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="81dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/GuestProfileBranchFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/GuestProfileBranch"
+        android:background="@drawable/profile_box"
+        android:padding="10dp"
+        android:text="Name of branch"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="29dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
