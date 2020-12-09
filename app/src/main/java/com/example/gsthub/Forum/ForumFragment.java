@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.gsthub.R;
@@ -74,13 +75,6 @@ public class ForumFragment extends Fragment {
         Posts.setAdapter(requestAdapter);
 
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.floatingactionbutton);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), CreatePost.class));
-            }
-        });
         AddPosts();
         return view;
     }

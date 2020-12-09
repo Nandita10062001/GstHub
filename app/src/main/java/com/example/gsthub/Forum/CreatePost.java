@@ -48,7 +48,7 @@ public class CreatePost extends AppCompatActivity {
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 
-        int day = cal.get(Calendar.DAY_OF_MONTH);
+        /*int day = cal.get(Calendar.DAY_OF_MONTH);
         int month = cal.get(Calendar.MONTH);
         int year = cal.get(Calendar.YEAR);
         int hour = cal.get(Calendar.HOUR);
@@ -76,7 +76,7 @@ public class CreatePost extends AppCompatActivity {
 
         Time +=min;
         Time +=(" "+ampm);
-        Date = day+"/"+month+"/"+year;
+        Date = day+"/"+month+"/"+year;*/
 
 
 
@@ -106,9 +106,9 @@ public class CreatePost extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.exists()) {
-                                    //ref.child(uid).child("FullName").setValue(snapshot.getValue(Data.class).FullName);
-                                    ref.child(uid).child("Time").setValue(Time);
-                                    ref.child(uid).child("Date").setValue(Date);
+                                    ref.child(uid).child("Description").setValue(snapshot.getValue(User.class).description);
+                                    /*ref.child(uid).child("Time").setValue(Time);
+                                    ref.child(uid).child("Date").setValue(Date);*/
                                     Toast.makeText(CreatePost.this, "Your Post has been created successfully", Toast.LENGTH_LONG).show();
 
                                     startActivity(new Intent(CreatePost.this, Forum.class));

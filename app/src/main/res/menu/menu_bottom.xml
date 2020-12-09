@@ -6,11 +6,11 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:id="@+id/Dashboard"/>
     <item
-        android:title="Classroom"
-        android:icon="@drawable/ic_baseline_book_24"
-        android:id="@+id/Classroom"/>
-    <item
         android:title="Forum"
         android:icon="@drawable/ic_baseline_people_24"
         android:id="@+id/Forum"/>
+    <item
+        android:title="Classroom"
+        android:icon="@drawable/ic_baseline_book_24"
+        android:id="@+id/Classroom"/>
 </menu>

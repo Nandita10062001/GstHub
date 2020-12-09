@@ -13,6 +13,8 @@
         <activity android:name=".CreateAccount" />
         <activity android:name=".Contact"/>
         <activity android:name=".Forum2" />
+        <activity android:name=".Forum.Forum"/>
+        <activity android:name=".Forum.CreatePost"/>
         <activity android:name=".HomePage2" />
         <activity android:name=".Classroom" />
         <activity android:name=".Dashboard" />

@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -30,9 +31,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
-        bottomNavigationView.setSelectedItemId(R.id.Dashboard);
-
         NavigationView navigationView= findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -48,39 +46,27 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
        actionBarDrawerToggle.syncState();*/
 
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.Dashboard);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-            private boolean loadFragment (Fragment fragment) {
-                if (fragment != null) {
-
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.fragment_container, fragment)
-                            .commit();
-                    return true;
-                }
-                return  false;
-            }
-
+            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment = null;
-
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.Dashboard:
-                        fragment = new DashboardFragment();
-                        break;
-
-                    case R.id.Classroom:
-                        fragment = new ClassroomFragment();
-                        break;
-
+                        return true;
                     case R.id.Forum:
-                       fragment = new ForumFragment();
-                       break;
+                        startActivity(new Intent(getApplicationContext(), Forum.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.Classroom:
+                        startActivity(new Intent(getApplicationContext(), Classroom.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                 }
-                return loadFragment(fragment);
+                return false;
             }
         });
 
