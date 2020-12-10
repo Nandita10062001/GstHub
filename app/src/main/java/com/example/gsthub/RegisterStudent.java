@@ -55,12 +55,11 @@ public class RegisterStudent extends AppCompatActivity {
     StorageReference storageReference;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_student);
+
        StName=findViewById(R.id.StudentName);
        StEmail=findViewById(R.id.StudentEmail);
        StPassword=findViewById(R.id.StudentPassword);

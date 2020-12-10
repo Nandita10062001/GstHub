@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/Photo2"
+        android:id="@+id/guestPhoto2"
         android:layout_width="130dp"
         android:layout_height="125dp"
         android:layout_centerHorizontal="true"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.808" />
 
     <Spinner
-        android:id="@+id/text1"
+        android:id="@+id/guestTypeEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -77,7 +77,7 @@
         app:layout_constraintVertical_bias="0.655" />
 
     <EditText
-        android:id="@+id/studentBranchEdit"
+        android:id="@+id/guestEmailEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -176,7 +176,7 @@
         app:layout_constraintVertical_bias="0.046" />
 
     <Button
-        android:id="@+id/editProfileBtn"
+        android:id="@+id/guesteditProfileBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"

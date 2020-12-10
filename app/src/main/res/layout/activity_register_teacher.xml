@@ -64,7 +64,7 @@
         app:layout_constraintVertical_bias="0.797" />
 
     <EditText
-        android:id="@+id/createEmailAddress"
+        android:id="@+id/TeacherEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SignInTitle"
@@ -86,7 +86,7 @@
         app:layout_constraintVertical_bias="0.516" />
 
     <EditText
-        android:id="@+id/teacherDepartment"
+        android:id="@+id/TeacherDepartment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SignInTitle"
@@ -109,7 +109,7 @@
         app:layout_constraintVertical_bias="0.665" />
 
     <EditText
-        android:id="@+id/teacherName"
+        android:id="@+id/TeacherName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -130,7 +130,7 @@
         app:layout_constraintVertical_bias="0.437" />
 
     <EditText
-        android:id="@+id/teacherQualifications"
+        android:id="@+id/TeacherQualifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SignInTitle"
@@ -138,7 +138,7 @@
         android:layout_margin="20dp"
         android:background="@drawable/bg_black_border_button"
         android:hint="Qualifications"
-        android:inputType="text"
+
         android:maxLines="1"
         android:padding="10dp"
         android:paddingStart="20dp"
@@ -152,7 +152,7 @@
         app:layout_constraintVertical_bias="0.742" />
 
     <EditText
-        android:id="@+id/createPassword"
+        android:id="@+id/TeacherPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signinEmailAddress"
@@ -175,7 +175,7 @@
 
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/teachersignUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signinPassword"

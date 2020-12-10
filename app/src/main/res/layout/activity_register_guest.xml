@@ -64,7 +64,7 @@
         app:layout_constraintVertical_bias="0.797" />
 
     <EditText
-        android:id="@+id/guestName"
+        android:id="@+id/GuestName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -85,7 +85,7 @@
         app:layout_constraintVertical_bias="0.456" />
 
     <EditText
-        android:id="@+id/createPassword"
+        android:id="@+id/GuestPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signinEmailAddress"
@@ -108,7 +108,7 @@
 
 
     <EditText
-        android:id="@+id/createEmailAddress"
+        android:id="@+id/GuestEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SignInTitle"
@@ -160,7 +160,7 @@
             app:layout_constraintVertical_bias="0.679" />
 
         <Spinner
-            android:id="@+id/text1"
+            android:id="@+id/GuestType"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
@@ -178,7 +178,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/guestNumber"
+        android:id="@+id/GuestContact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SignInTitle"
@@ -201,7 +201,7 @@
         app:layout_constraintVertical_bias="0.708" />
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/guestsignUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signinPassword"

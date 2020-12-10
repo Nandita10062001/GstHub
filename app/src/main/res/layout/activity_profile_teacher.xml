@@ -48,7 +48,7 @@
                 app:layout_constraintVertical_bias="0.478">
 
                 <ImageView
-                    android:id="@+id/Photo1"
+                    android:id="@+id/teacherPhoto1"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_below="@+id/Create"
@@ -61,7 +61,7 @@
 
 
             <Button
-                android:id="@+id/EditProfileButton"
+                android:id="@+id/teacherEditProfileButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -131,7 +131,7 @@
                 app:layout_constraintVertical_bias="0.063" />
 
             <TextView
-                android:id="@+id/teacherQualificationsFill"
+                android:id="@+id/TeacherQualificationsFill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="110dp"
@@ -162,7 +162,7 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/teacherDepartmentFill"
+                android:id="@+id/TeacherDepartmentFill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

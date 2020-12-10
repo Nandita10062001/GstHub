@@ -7,11 +7,11 @@
 
 
     <ImageView
-        android:id="@+id/Photo2"
+        android:id="@+id/teacherPhoto2"
         android:layout_width="130dp"
         android:layout_height="125dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="112dp"
         android:adjustViewBounds="true"
         android:background="@drawable/r_button"
         android:scaleType="fitCenter"
@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editProfileTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/teacherQualifications"
@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.655" />
 
     <EditText
-        android:id="@+id/studentBranchEdit"
+        android:id="@+id/teacherQualificationsEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.727" />
 
     <EditText
-        android:id="@+id/teacheNameEdit"
+        android:id="@+id/teacherNameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -139,7 +139,7 @@
         app:layout_constraintVertical_bias="0.046" />
 
     <Button
-        android:id="@+id/editProfileBtn"
+        android:id="@+id/teachereditProfileBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"

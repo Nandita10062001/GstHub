@@ -15,7 +15,10 @@ import android.view.MenuItem;
 
 import com.example.gsthub.Forum.Forum;
 import com.example.gsthub.Forum.ForumFragment;
+import com.example.gsthub.profile.ProfileAlumni;
+import com.example.gsthub.profile.ProfileGuest;
 import com.example.gsthub.profile.ProfileStudent;
+import com.example.gsthub.profile.ProfileTeacher;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -95,7 +98,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.profile:
-                startActivity(new Intent(getApplicationContext(), ProfileStudent.class));
+                startActivity(new Intent(getApplicationContext(), ProfileTeacher.class));
                 break;
 
             case R.id.info:

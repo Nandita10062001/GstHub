@@ -130,7 +130,7 @@ public class SignIn extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RegisterStudent.class));
+                startActivity(new Intent(getApplicationContext(), SignInAs.class));
             }
         });
 
