@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.gsthub">
 
     <application
@@ -9,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfileStudent"></activity>
+        <activity android:name=".EditProfileStudent" />
         <activity android:name=".MainActivity2" />
         <activity
             android:name=".Contact"
@@ -17,7 +18,6 @@
         <activity
             android:name=".AboutUs"
             android:parentActivityName=".HomePage" />
-        <activity android:name=".Forum2" />
         <activity android:name=".Forum.Forum"/>
         <activity android:name=".Forum.CreatePost"/>
         <activity android:name=".HomePage2" />

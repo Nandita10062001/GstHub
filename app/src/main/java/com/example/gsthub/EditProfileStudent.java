@@ -28,11 +28,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class EditProfileStudent extends AppCompatActivity {
  private ImageView img;
@@ -59,6 +63,7 @@ public class EditProfileStudent extends AppCompatActivity {
         Styear = findViewById(R.id.studentYearEdit);
         Stbranch = findViewById(R.id.studentBranchEdit);
         Stteam = findViewById(R.id.studentTeamEdit);
+        SaveProfile = findViewById(R.id.editProfileBtn);
 
         StorageReference storageReference = FirebaseStorage.getInstance().getReference();           //after uploading to display it on that page every time you open the activity
         final StorageReference ref = storageReference.child("users/" + auth.getCurrentUser().getUid() + "/profile.jpg");
@@ -99,13 +104,32 @@ public class EditProfileStudent extends AppCompatActivity {
 
             }
         });
-//      SaveProfile.setOnClickListener(new View.OnClickListener() {
-//          @Override
-//          public void onClick(View view) {
-//              on clicking on the save button, jo edit kiya hai wo text sab wo update hona chahiye firebase pe
-//          }
-//      });
+      SaveProfile.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              updateProfile(Stname.getText().toString(), Styear.getText().toString(),
+                      Stbranch.getText().toString(), Stteam.getText().toString());
+          }
+      });
    }
+
+    private void updateProfile(String Stname, String Styear, String Stbranch, String Stteam) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student").child(student.getUid());
+        HashMap<String,Object> edited = new HashMap<>();
+        edited.put("sName", Stname);
+        edited.put("sYear", Styear);
+        edited.put("sBranch", Stbranch);
+        edited.put("sTeam", Stteam);
+
+        reference.updateChildren(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(EditProfileStudent.this, "Profile Updated", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(), ProfileStudent.class));
+                finish();
+            }
+        });
+    }
 
 
     @Override

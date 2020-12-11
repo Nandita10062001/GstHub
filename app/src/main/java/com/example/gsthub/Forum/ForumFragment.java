@@ -52,31 +52,40 @@ public class ForumFragment extends Fragment {
         // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_forum, container, false);
 
-       /* Posts =view.findViewById(R.id.recyclerViewForum);
-        Posts.setLayoutManager(new LinearLayoutManager(getContext()));
+        //Posts =(RecyclerView)view.findViewById(R.id.recyclerViewForum);
+        //Posts.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ref = FirebaseDatabase.getInstance().getReference();
+        /*ref = FirebaseDatabase.getInstance().getReference();
         postLists = new ArrayList<>();
 
         pd = new ProgressDialog(getActivity());
         pd.setMessage("Loading...");
         pd.setCancelable(true);
-        pd.setCanceledOnTouchOutside(false);*/
+        pd.setCanceledOnTouchOutside(false);
 
-       /* auth = FirebaseAuth.getInstance();
-        requestAdapter = new DataAdapter(postLists);
+        auth = FirebaseAuth.getInstance();
+        getActivity().setTitle("Forum");*/
+
+        /*requestAdapter = new DataAdapter(postLists);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         Posts.setLayoutManager(layoutManager);
         Posts.setItemAnimator(new DefaultItemAnimator());
         Posts.addItemDecoration(new DividerItemDecoration(getActivity(),LinearLayoutManager.VERTICAL));
-        Posts.setAdapter(requestAdapter);
+        Posts.setAdapter(requestAdapter);*/
 
 
-        AddPosts();
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CreatePost.class));
+            }
+        });
+        //AddPosts();
         return view;
     }
 
-   /* private void AddPosts() {
+    private void AddPosts() {
         Query allPosts = ref.child("posts");
         allPosts.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -99,5 +108,5 @@ public class ForumFragment extends Fragment {
                 Log.d("Users", error.getMessage());
             }
         });
-    }*/
+    }
 }

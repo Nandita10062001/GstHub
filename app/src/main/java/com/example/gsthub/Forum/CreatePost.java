@@ -2,14 +2,17 @@ package com.example.gsthub.Forum;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gsthub.R;
+import com.google.firebase.database.DatabaseError;
 
 public class CreatePost extends AppCompatActivity {
-    ProgressDialog pd;
+    /*ProgressDialog pd;
     private Button Post;
     /*EditText description;
     FirebaseDatabase db;
@@ -24,7 +27,7 @@ public class CreatePost extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_post);
-        Post = findViewById(R.id.postbtn);
+        /*Post = findViewById(R.id.postbtn);
         /*pd = new ProgressDialog(this);
         pd.setMessage("Loading...");
         pd.setCancelable(true);
@@ -62,7 +65,7 @@ public class CreatePost extends AppCompatActivity {
 
 
 
-        FirebaseUser user=auth.getInstance().getCurrentUser();
+        /*FirebaseUser user=auth.getInstance().getCurrentUser();
         if(user == null)
         {
             startActivity(new Intent(CreatePost.this, SignIn.class));
@@ -72,7 +75,7 @@ public class CreatePost extends AppCompatActivity {
         }
 
 
-        description = findViewById(R.id.question);
+        /*description = findViewById(R.id.question);
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("posts");
 
@@ -90,7 +93,7 @@ public class CreatePost extends AppCompatActivity {
                                 if (snapshot.exists()) {
                                     ref.child(uid).child("Description").setValue(snapshot.getValue(User.class).description);
                                     /*ref.child(uid).child("Time").setValue(Time);
-                                    ref.child(uid).child("Date").setValue(Date);*/
+                                    ref.child(uid).child("Date").setValue(Date);
                                     Toast.makeText(CreatePost.this, "Your Post has been created successfully", Toast.LENGTH_LONG).show();
 
                                     startActivity(new Intent(CreatePost.this, Forum.class));
@@ -116,4 +119,4 @@ public class CreatePost extends AppCompatActivity {
         pd.dismiss();
     }*/
     }
-}
+    }

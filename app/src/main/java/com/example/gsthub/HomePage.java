@@ -53,31 +53,47 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-
         bottomNavigationView.setSelectedItemId(R.id.Dashboard);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
+
+            private boolean loadFragment (Fragment fragment) {
+                if (fragment != null) {
+
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, fragment)
+                            .commit();
+                    return true;
+                }
+                return  false;
+            }
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
+                Fragment fragment = null;
+
+                switch(item.getItemId())
+                {
                     case R.id.Dashboard:
-                        return true;
+                        fragment = new DashboardFragment();
+                        break;
+
                     case R.id.Forum:
-                        startActivity(new Intent(getApplicationContext(), Forum.class));
-                        overridePendingTransition(0, 0);
-                        return true;
+                        fragment = new ForumFragment();
+                        break;
+
                     case R.id.Classroom:
-                        startActivity(new Intent(getApplicationContext(), Classroom.class));
-                        overridePendingTransition(0, 0);
-                        return true;
+                        fragment = new ClassroomFragment();
+                        break;
                 }
-                return false;
+                return loadFragment(fragment);
             }
         });
 
     }
-    @Override
+
+
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.profile:
