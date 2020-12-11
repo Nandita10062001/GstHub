@@ -8,29 +8,30 @@
 
 
     <ImageView
-        android:id="@+id/Photo2"
+        android:id="@+id/alumniPhoto2"
         android:layout_width="130dp"
         android:layout_height="125dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
         android:adjustViewBounds="true"
         android:background="@drawable/r_button"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_add_image"
         app:layout_constraintBottom_toTopOf="@+id/studentName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editProfileTitle" />
 
-
     <TextView
-        android:id="@+id/studentTeam"
+        android:id="@+id/alumniTeam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:layout_marginStart="50dp"
         android:fontFamily="sans-serif-medium"
         android:padding="10dp"
-        android:text="College Team"
+        android:text=" Part of any former college team"
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +42,7 @@
         app:layout_constraintVertical_bias="0.808" />
 
     <EditText
-        android:id="@+id/studentTeamEdit"
+        android:id="@+id/alumniTeamEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -59,7 +60,7 @@
         app:layout_constraintVertical_bias="0.882" />
 
     <TextView
-        android:id="@+id/studentBranch"
+        android:id="@+id/alumniBranch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -76,7 +77,7 @@
         app:layout_constraintVertical_bias="0.655" />
 
     <EditText
-        android:id="@+id/studentBranchEdit"
+        android:id="@+id/alumniBranchEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -92,7 +93,7 @@
         app:layout_constraintVertical_bias="0.727" />
 
     <EditText
-        android:id="@+id/studentNameEdit"
+        android:id="@+id/alumniNameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -109,7 +110,7 @@
         app:layout_constraintVertical_bias="0.429" />
 
     <TextView
-        android:id="@+id/studentName"
+        android:id="@+id/alumniName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -125,12 +126,12 @@
         app:layout_constraintVertical_bias="0.364" />
 
     <EditText
-        android:id="@+id/studentYearEdit"
+        android:id="@+id/alumniPassoutYearEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@drawable/bg_round_button"
-        android:hint="SE"
+        android:hint="2017"
         android:padding="10dp"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -142,13 +143,13 @@
         app:layout_constraintVertical_bias="0.576" />
 
     <TextView
-        android:id="@+id/studentYear"
+        android:id="@+id/alumniPassoutYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:fontFamily="sans-serif-medium"
         android:padding="10dp"
-        android:text="Year"
+        android:text=" Passout Year"
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -175,7 +176,7 @@
         app:layout_constraintVertical_bias="0.046" />
 
     <Button
-        android:id="@+id/editProfileBtn"
+        android:id="@+id/alumnieditProfileBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -188,6 +189,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

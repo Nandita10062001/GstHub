@@ -1,28 +1,27 @@
 package com.example.gsthub;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gsthub.profile.ProfileAlumni;
 import com.example.gsthub.profile.ProfileStudent;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,31 +35,31 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
-public class EditProfileStudent extends AppCompatActivity {
- private ImageView img;
- FirebaseAuth auth;
+public class EditProfileAlumni extends AppCompatActivity {
+    private ImageView img;
+    FirebaseAuth auth;
     private Uri imgUri;
     private StorageReference storageReference;
-    private FirebaseUser student;
+    private FirebaseUser alumni;
     private DatabaseReference reference;
-    private String studentID;
+    private String alumniID;
     private Button SaveProfile;
-    private EditText Stname,Styear,Stbranch,Stteam;
+    private EditText Alname,Alyear,Albranch,Alteam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile_student);
-        img = findViewById(R.id.Photo2);
+        setContentView(R.layout.activity_edit_profile_alumni);
+        img = findViewById(R.id.alumniPhoto2);
         auth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        student = auth.getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Student");
-        studentID = student.getUid();
-        SaveProfile = findViewById(R.id.editProfileBtn);
-        Stname = findViewById(R.id.studentNameEdit);
-        Styear = findViewById(R.id.studentYearEdit);
-        Stbranch = findViewById(R.id.studentBranchEdit);
-        Stteam = findViewById(R.id.studentTeamEdit);
+        alumni = auth.getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Alumni");
+        alumniID = alumni.getUid();
+        SaveProfile = findViewById(R.id.alumnieditProfileBtn);
+        Alname = findViewById(R.id.alumniNameEdit);
+        Alyear = findViewById(R.id.alumniPassoutYearEdit);
+        Albranch = findViewById(R.id.alumniBranchEdit);
+        Alteam = findViewById(R.id.alumniTeamEdit);
 
         StorageReference storageReference = FirebaseStorage.getInstance().getReference();           //after uploading to display it on that page every time you open the activity
         final StorageReference ref = storageReference.child("users/" + auth.getCurrentUser().getUid() + "/profile.jpg");
@@ -78,26 +77,26 @@ public class EditProfileStudent extends AppCompatActivity {
             }
         });
 
-        reference.child(studentID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(alumniID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Student studentProfile = snapshot.getValue(Student.class);                        // displaying all the data in edittext
-                if (studentProfile != null) {
-                    String Name = studentProfile.sName;
-                    String Year = studentProfile.sYear;
-                    String Branch = studentProfile.sBranch;
-                    String Team = studentProfile.sTeam;
+                Alumni alumniProfile = snapshot.getValue(Alumni.class);                        // displaying all the data in edittext
+                if (alumniProfile != null) {
+                    String Name = alumniProfile.aName;
+                    String Year = alumniProfile.aYear;
+                    String Branch = alumniProfile.aBranch;
+                    String Team = alumniProfile.aTeam;
 
-                    Stname.setText(Name);
-                    Styear.setText(Year);
-                    Stbranch.setText(Branch);
-                    Stteam.setText(Team);
+                    Alname.setText(Name);
+                    Alyear.setText(Year);
+                    Albranch.setText(Branch);
+                    Alteam.setText(Team);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(EditProfileStudent.this, "Something went Wrong!", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfileAlumni.this, "Something went Wrong!", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -108,9 +107,9 @@ public class EditProfileStudent extends AppCompatActivity {
 
             public void onClick(View view) {
 
-                updateProfile(Stname.getText().toString(), Styear.getText().toString(),
+                updateProfile(Alname.getText().toString(), Alyear.getText().toString(),
 
-                        Stbranch.getText().toString(), Stteam.getText().toString());
+                        Albranch.getText().toString(), Alteam.getText().toString());
 
             }
 
@@ -118,19 +117,19 @@ public class EditProfileStudent extends AppCompatActivity {
 
     }
 
-    private void updateProfile(String Stname, String Styear, String Stbranch, String Stteam) {
+    private void updateProfile(String Alname, String Alyear, String Albranch, String Alteam) {
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student").child(student.getUid());
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Alumni").child(alumni.getUid());
 
         HashMap<String, Object> edited = new HashMap<>();
 
-        edited.put("sName", Stname);
+        edited.put("aName", Alname);
 
-        edited.put("sYear", Styear);
+        edited.put("aYear", Alyear);
 
-        edited.put("sBranch", Stbranch);
+        edited.put("aBranch", Albranch);
 
-        edited.put("sTeam", Stteam);
+        edited.put("aTeam", Alteam);
 
 
 
@@ -140,9 +139,9 @@ public class EditProfileStudent extends AppCompatActivity {
 
             public void onSuccess(Void aVoid) {
 
-                Toast.makeText(EditProfileStudent.this, "Profile Updated", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfileAlumni.this, "Profile Updated", Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(getApplicationContext(), ProfileStudent.class));
+                startActivity(new Intent(getApplicationContext(), ProfileAlumni.class));
 
                 finish();
 

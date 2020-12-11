@@ -18,22 +18,138 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
 
 public class RegisterGuest extends AppCompatActivity {
+    private EditText GuName,GuEmail,GuPassword,GuContact;
+    private Button SignUp;
+    private TextView AlreadyAcc;
+    private FirebaseAuth auth;
+    Spinner GuGuestType;
+    StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_guest);
 
+        GuName=findViewById(R.id.GuestName);
+        GuEmail=findViewById(R.id.GuestEmail);
+        GuPassword=findViewById(R.id.GuestPassword);
+        GuContact=findViewById(R.id.GuestContact);
+        GuGuestType =findViewById(R.id.GuestType);
+        SignUp=findViewById(R.id.guestsignUpButton);
+        AlreadyAcc=findViewById(R.id.alreadyAcc);
+        auth = FirebaseAuth.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
-        Spinner guestType = (Spinner) findViewById(R.id.text1);
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterGuest.this,
-                android.R.layout.simple_spinner_item,
-                getResources().getStringArray(R.array.guest_array));
 
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        guestType.setAdapter(myAdapter);
+
+        AlreadyAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),SignIn.class));
+            }
+        });
+
+
+        SignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String Name = GuName.getText().toString().trim();
+                final String Email = GuEmail.getText().toString().trim();
+                final String Password = GuPassword.getText().toString().trim();
+                final String Contact = GuContact.getText().toString().trim();
+
+
+
+                ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterGuest.this,
+                        android.R.layout.simple_spinner_item,
+                        getResources().getStringArray(R.array.guest_array));
+
+                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                GuGuestType.setAdapter(myAdapter);
+                final String GuestType = GuGuestType.getSelectedItem().toString();
+
+
+                if(Name.isEmpty())
+                {
+                    GuName.setError("Please fill in  your Name!");
+                    GuName.requestFocus();
+                    return;
+                }
+                if(Email.isEmpty())
+                {
+                    GuEmail.setError("Enter your Email!");
+                    GuEmail.requestFocus();
+                    return;
+                }
+                if(Password.isEmpty())
+                {
+                    GuPassword.setError("Create a Strong Password!");
+                    GuPassword.requestFocus();
+                    return;
+                }
+                if(Contact.isEmpty())
+                {
+                    GuContact.setError("Mention Your Phone number!");
+                    GuContact.requestFocus();
+                    return;
+                }
+//                if(GuestType.isEmpty())
+//                {
+//                    GuGuestType.setError("Mention your Branch!");
+//                    GuGuestType.requestFocus();
+//                    return;
+//                }
+
+                if(!Patterns.EMAIL_ADDRESS.matcher(Email).matches())
+                {
+                    GuEmail.setError("Please enter a valid Email Address!");
+                    GuEmail.requestFocus();
+                    return;
+                }
+                if(Password.length()<6)
+                {
+                    GuPassword.setError("Password should be of Minimum 6 characters!..");
+                    GuPassword.requestFocus();
+                    return;
+                }
+
+                auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful())
+                        {
+                            Guest guest = new Guest(Name,Email,Contact,GuestType);
+                            FirebaseDatabase.getInstance().getReference("Guest")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(guest).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(RegisterGuest.this,"User has been registered successfully",Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(),HomePage.class));
+                                        finish();
+                                    }
+                                    else{
+                                        Toast.makeText(RegisterGuest.this,"Failed to register! Try Again!",Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                        }
+                        else{
+                            Toast.makeText(RegisterGuest.this,"Failed to Register!Try Again!",Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+            }
+        });
 
 
     }

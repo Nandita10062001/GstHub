@@ -1,28 +1,28 @@
 package com.example.gsthub;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.gsthub.profile.ProfileStudent;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gsthub.profile.ProfileAlumni;
+import com.example.gsthub.profile.ProfileGuest;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,31 +36,32 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
-public class EditProfileStudent extends AppCompatActivity {
- private ImageView img;
- FirebaseAuth auth;
+public class EditProfileGuest extends AppCompatActivity{
+    private ImageView img;
+    FirebaseAuth auth;
     private Uri imgUri;
     private StorageReference storageReference;
-    private FirebaseUser student;
+    private FirebaseUser guest;
     private DatabaseReference reference;
-    private String studentID;
+    private String guestID;
     private Button SaveProfile;
-    private EditText Stname,Styear,Stbranch,Stteam;
+    private EditText Guname,Guemail,Gucontact;
+    private Spinner Guguesttype;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile_student);
-        img = findViewById(R.id.Photo2);
+        setContentView(R.layout.activity_edit_profile_guest);
+        img = findViewById(R.id.guestPhoto2);
         auth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        student = auth.getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Student");
-        studentID = student.getUid();
-        SaveProfile = findViewById(R.id.editProfileBtn);
-        Stname = findViewById(R.id.studentNameEdit);
-        Styear = findViewById(R.id.studentYearEdit);
-        Stbranch = findViewById(R.id.studentBranchEdit);
-        Stteam = findViewById(R.id.studentTeamEdit);
+        guest = auth.getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Guest");
+        guestID = guest.getUid();
+        SaveProfile = findViewById(R.id.guesteditProfileBtn);
+        Guname = findViewById(R.id.guestNameEdit);
+        Guemail = findViewById(R.id.guestEmailEdit);
+        Gucontact = findViewById(R.id.guestNumberEdit);
+        Guguesttype = findViewById(R.id.guestTypeEdit);
 
         StorageReference storageReference = FirebaseStorage.getInstance().getReference();           //after uploading to display it on that page every time you open the activity
         final StorageReference ref = storageReference.child("users/" + auth.getCurrentUser().getUid() + "/profile.jpg");
@@ -78,26 +79,34 @@ public class EditProfileStudent extends AppCompatActivity {
             }
         });
 
-        reference.child(studentID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(guestID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Student studentProfile = snapshot.getValue(Student.class);                        // displaying all the data in edittext
-                if (studentProfile != null) {
-                    String Name = studentProfile.sName;
-                    String Year = studentProfile.sYear;
-                    String Branch = studentProfile.sBranch;
-                    String Team = studentProfile.sTeam;
+                Guest guestProfile = snapshot.getValue(Guest.class);                        // displaying all the data in edittext
+                if (guestProfile != null) {
+                    String Name = guestProfile.gName;
+                    String Email = guestProfile.gEmail;
+                    String Contact = guestProfile.gContact;
+                    String GuestType = guestProfile.gGuestType;
 
-                    Stname.setText(Name);
-                    Styear.setText(Year);
-                    Stbranch.setText(Branch);
-                    Stteam.setText(Team);
+                    Guname.setText(Name);
+                    Guemail.setText(Email);
+                    Gucontact.setText(Contact);
+
+                    
+
+//             *************Yahape error aara*********************
+//                    Guguesttype.setText(GuestType);
+
+
+
+
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(EditProfileStudent.this, "Something went Wrong!", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfileGuest.this, "Something went Wrong!", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -108,9 +117,9 @@ public class EditProfileStudent extends AppCompatActivity {
 
             public void onClick(View view) {
 
-                updateProfile(Stname.getText().toString(), Styear.getText().toString(),
+                updateProfile(Guname.getText().toString(), Guemail.getText().toString(),
 
-                        Stbranch.getText().toString(), Stteam.getText().toString());
+                        Gucontact.getText().toString(), Guguesttype.getSelectedItem().toString());
 
             }
 
@@ -118,19 +127,19 @@ public class EditProfileStudent extends AppCompatActivity {
 
     }
 
-    private void updateProfile(String Stname, String Styear, String Stbranch, String Stteam) {
+    private void updateProfile(String Guname, String Guemail, String Gucontact, String Guguesttype) {
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student").child(student.getUid());
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Alumni").child(guest.getUid());
 
         HashMap<String, Object> edited = new HashMap<>();
 
-        edited.put("sName", Stname);
+        edited.put("gName", Guname);
 
-        edited.put("sYear", Styear);
+        edited.put("gEmail", Guemail);
 
-        edited.put("sBranch", Stbranch);
+        edited.put("gContact", Gucontact);
 
-        edited.put("sTeam", Stteam);
+        edited.put("gGuestType", Guguesttype);
 
 
 
@@ -140,9 +149,9 @@ public class EditProfileStudent extends AppCompatActivity {
 
             public void onSuccess(Void aVoid) {
 
-                Toast.makeText(EditProfileStudent.this, "Profile Updated", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfileGuest.this, "Profile Updated", Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(getApplicationContext(), ProfileStudent.class));
+                startActivity(new Intent(getApplicationContext(), ProfileGuest.class));
 
                 finish();
 
@@ -194,4 +203,5 @@ public class EditProfileStudent extends AppCompatActivity {
             }
         });
     }
+
 }
