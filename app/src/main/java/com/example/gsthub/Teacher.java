@@ -8,11 +8,12 @@ public class Teacher
     {
     }
 
-    public Teacher(String tName,String tEmail,String tQualifications,String tDepartment )
+    public Teacher(String tName,String tEmail,String tDepartment,String tQualifications )
     {
         this.tName=tName;
         this.tEmail=tEmail;
-        this.tQualifications=tQualifications;
         this.tDepartment=tDepartment;
+        this.tQualifications=tQualifications;
+
     }
 }

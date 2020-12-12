@@ -25,7 +25,7 @@ public class RegisterTeacher extends AppCompatActivity {
     private Button SignUp;
     private TextView AlreadyAcc;
     private FirebaseAuth auth;
-    StorageReference storageReference;
+
 
 
     @Override
@@ -42,7 +42,7 @@ public class RegisterTeacher extends AppCompatActivity {
         SignUp=findViewById(R.id.teachersignUpButton);
         AlreadyAcc=findViewById(R.id.alreadyAcc);
         auth = FirebaseAuth.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
+
 
 
 

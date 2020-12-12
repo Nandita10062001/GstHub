@@ -26,6 +26,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
@@ -33,14 +36,18 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     ActionBarDrawerToggle actionBarDrawerToggle;
     FirebaseAuth mAuth;
     private GoogleSignInClient googleSignInClient;
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-
+//        isTeacher.getReference().child("Teacher");
+//        isStudent.getReference().child("Student");
+//        isAlumni.getReference().child("Alumni");
+//        isGuest.getReference().child("Guest");
         NavigationView navigationView= findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         toolbar = (Toolbar)findViewById(R.id.toolbar) ;
         setSupportActionBar(toolbar);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
@@ -99,17 +106,19 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.profile:
-                startActivity(new Intent(getApplicationContext(), ProfileTeacher.class));
+                case R.id.profile:
+                startActivity(new Intent(getApplicationContext(), ProfileGuest.class));
                 break;
 
-            case R.id.info:
+                case R.id.info:
                 startActivity(new Intent(getApplicationContext(), AboutUs.class));
                 break;
-            case R.id.contact:
+
+                case R.id.contact:
                 startActivity(new Intent(getApplicationContext(), Contact.class));
                 break;
-            case R.id.logout:
+
+                case R.id.logout:
                 mAuth.signOut();
                 googleSignInClient.signOut();
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);

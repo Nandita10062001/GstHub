@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:hint="Pournami Pottekat"
+                android:hint="Full Name "
                 android:padding="1dp"
                 android:textAlignment="center"
                 android:textSize="18sp"

@@ -13,7 +13,6 @@
         android:layout_height="125dp"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:background="@drawable/r_button"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_add_image"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,13 +40,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.808" />
 
-    <Spinner
+    <EditText
         android:id="@+id/guestTypeEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@drawable/bg_round_button"
-        android:hint="Student"
         android:padding="10dp"
         android:shadowColor="#A1FFFFFF"
         android:textAlignment="center"
@@ -82,7 +80,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@drawable/bg_round_button"
-        android:hint="youremail@gmail.com"
         android:padding="10dp"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -98,7 +95,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@drawable/bg_round_button"
-        android:hint="Pournami Pottekat"
         android:textAlignment="center"
         android:padding="10dp"
         android:textSize="15sp"
@@ -131,7 +127,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@drawable/bg_round_button"
-        android:hint="9821911977"
         android:padding="10dp"
         android:textAlignment="center"
         android:textSize="15sp"

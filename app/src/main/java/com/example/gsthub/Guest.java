@@ -1,5 +1,7 @@
 package com.example.gsthub;
 
+import android.widget.Spinner;
+
 public class Guest
 {
     public String gName,gEmail,gContact,gGuestType;
@@ -8,7 +10,7 @@ public class Guest
     {
     }
 
-    public Guest(String gName, String gEmail, String gContact , String gGuestType)
+    public Guest(String gName, String gEmail, String gContact , String  gGuestType)
     {
         this.gName=gName;
         this.gEmail=gEmail;

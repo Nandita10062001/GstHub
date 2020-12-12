@@ -67,7 +67,7 @@
                 android:layout_marginStart="40dp"
                 android:fontFamily="sans-serif-medium"
                 android:padding="5dp"
-                android:hint="9999999888"
+                android:hint="Contac"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.291"
@@ -129,17 +129,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:hint="Pournami Pottekat"
+                android:hint="Name"
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.746"
+                app:layout_constraintHorizontal_bias="0.9"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.075" />
+                app:layout_constraintVertical_bias="0.078" />
 
             <TextView
                 android:id="@+id/GuestEmailFill"
@@ -147,14 +147,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:fontFamily="sans-serif-medium"
+                android:hint="Email"
                 android:padding="5dp"
-                android:hint="pournamipot09@gmail.com"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.72"
+                app:layout_constraintHorizontal_bias="0.943"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.131" />
+                app:layout_constraintVertical_bias="0.145" />
 
             <TextView
                 android:id="@+id/guestType"
@@ -163,7 +163,7 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="sans-serif-medium"
                 android:padding="5dp"
-                android:text="I am        :"
+                android:text="I am a       :"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"

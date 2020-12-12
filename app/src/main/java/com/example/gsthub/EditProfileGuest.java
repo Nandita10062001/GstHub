@@ -45,8 +45,7 @@ public class EditProfileGuest extends AppCompatActivity{
     private DatabaseReference reference;
     private String guestID;
     private Button SaveProfile;
-    private EditText Guname,Guemail,Gucontact;
-    private Spinner Guguesttype;
+    private EditText Guname,Guemail,Gucontact,Guguesttype;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,12 +91,7 @@ public class EditProfileGuest extends AppCompatActivity{
                     Guname.setText(Name);
                     Guemail.setText(Email);
                     Gucontact.setText(Contact);
-
-                    
-
-//             *************Yahape error aara*********************
-//                    Guguesttype.setText(GuestType);
-
+                    Guguesttype.setText(GuestType);
 
 
 
@@ -119,7 +113,7 @@ public class EditProfileGuest extends AppCompatActivity{
 
                 updateProfile(Guname.getText().toString(), Guemail.getText().toString(),
 
-                        Gucontact.getText().toString(), Guguesttype.getSelectedItem().toString());
+                        Gucontact.getText().toString(), Guguesttype.getText().toString());
 
             }
 
@@ -129,7 +123,7 @@ public class EditProfileGuest extends AppCompatActivity{
 
     private void updateProfile(String Guname, String Guemail, String Gucontact, String Guguesttype) {
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Alumni").child(guest.getUid());
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Guest").child(guest.getUid());
 
         HashMap<String, Object> edited = new HashMap<>();
 

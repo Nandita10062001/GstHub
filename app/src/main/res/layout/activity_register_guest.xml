@@ -151,7 +151,7 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:text="Type of guest"
-            android:textColor="#3F51B5"
+            android:textColor="@color/Black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.016"
@@ -159,15 +159,15 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.679" />
 
-        <Spinner
+        <EditText
             android:id="@+id/GuestType"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:background="@drawable/bg_black_border_button"
             android:padding="10dp"
-            android:text="Type of Guest"
-            android:textColor="#3F51B5"
+            android:textSize="15sp"
+            android:hint="Parent/Student/Teacher.."
             android:textColorHint="#A1A1A1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

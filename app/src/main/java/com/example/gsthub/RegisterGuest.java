@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -29,8 +31,7 @@ public class RegisterGuest extends AppCompatActivity {
     private Button SignUp;
     private TextView AlreadyAcc;
     private FirebaseAuth auth;
-    Spinner GuGuestType;
-    StorageReference storageReference;
+    private EditText GuGuestType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class RegisterGuest extends AppCompatActivity {
         SignUp=findViewById(R.id.guestsignUpButton);
         AlreadyAcc=findViewById(R.id.alreadyAcc);
         auth = FirebaseAuth.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
+
 
 
 
@@ -57,6 +58,7 @@ public class RegisterGuest extends AppCompatActivity {
         });
 
 
+
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,16 +66,8 @@ public class RegisterGuest extends AppCompatActivity {
                 final String Email = GuEmail.getText().toString().trim();
                 final String Password = GuPassword.getText().toString().trim();
                 final String Contact = GuContact.getText().toString().trim();
+                final String GuestType = GuGuestType.getText().toString().trim();
 
-
-
-                ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterGuest.this,
-                        android.R.layout.simple_spinner_item,
-                        getResources().getStringArray(R.array.guest_array));
-
-                myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                GuGuestType.setAdapter(myAdapter);
-                final String GuestType = GuGuestType.getSelectedItem().toString();
 
 
                 if(Name.isEmpty())
@@ -100,12 +94,11 @@ public class RegisterGuest extends AppCompatActivity {
                     GuContact.requestFocus();
                     return;
                 }
-//                if(GuestType.isEmpty())
-//                {
-//                    GuGuestType.setError("Mention your Branch!");
-//                    GuGuestType.requestFocus();
-//                    return;
-//                }
+               if(Contact.length()!=10)
+               {
+                   GuContact.setError("Please enter a valid contact number!");
+                   GuContact.requestFocus();
+               }
 
                 if(!Patterns.EMAIL_ADDRESS.matcher(Email).matches())
                 {
@@ -119,7 +112,11 @@ public class RegisterGuest extends AppCompatActivity {
                     GuPassword.requestFocus();
                     return;
                 }
-
+            if(GuestType.isEmpty())
+            {
+                GuGuestType.setError("Mention who you are!");
+                GuGuestType.requestFocus();
+            }
                 auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -153,4 +150,6 @@ public class RegisterGuest extends AppCompatActivity {
 
 
     }
+
+
 }

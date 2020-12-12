@@ -27,7 +27,6 @@ public class RegisterAlumni extends AppCompatActivity {
     private Button SignUp;
     private TextView AlreadyAcc;
     private FirebaseAuth auth;
-    StorageReference storageReference;
 
 
 
@@ -45,7 +44,7 @@ public class RegisterAlumni extends AppCompatActivity {
         SignUp=findViewById(R.id.alumnisignUpButton);
         AlreadyAcc=findViewById(R.id.alreadyAcc);
         auth = FirebaseAuth.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
+
 
 
 
