@@ -115,7 +115,7 @@ public class RegisterTeacher extends AppCompatActivity {
                         {
 
                             Teacher teacher = new Teacher(Name,Email,Department,Qualifications);
-                            FirebaseDatabase.getInstance().getReference("Teacher")
+                            FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(teacher).addOnCompleteListener(new OnCompleteListener<Void>() {
 

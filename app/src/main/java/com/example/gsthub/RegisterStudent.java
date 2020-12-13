@@ -146,7 +146,7 @@ public class RegisterStudent extends AppCompatActivity {
                        if(task.isSuccessful())
                        {
                            Student student = new Student(Name,Email,Year,Branch,team);
-                           FirebaseDatabase.getInstance().getReference("Student")
+                           FirebaseDatabase.getInstance().getReference("Users")
                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                    .setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
                                @Override

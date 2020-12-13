@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.gsthub.HomePage;
 import com.example.gsthub.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,6 +43,7 @@ public class ForumFragment extends Fragment {
     private ProgressDialog pd;
 
 
+
     public ForumFragment() {
         // Required empty public constructor
     }
@@ -52,7 +54,8 @@ public class ForumFragment extends Fragment {
         // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_forum, container, false);
 
-        //Posts =(RecyclerView)view.findViewById(R.id.recyclerViewForum);
+
+            //Posts =(RecyclerView)view.findViewById(R.id.recyclerViewForum);
         //Posts.setLayoutManager(new LinearLayoutManager(getContext()));
 
         /*ref = FirebaseDatabase.getInstance().getReference();

@@ -40,9 +40,9 @@ public class EditProfileAlumni extends AppCompatActivity {
     FirebaseAuth auth;
     private Uri imgUri;
     private StorageReference storageReference;
-    private FirebaseUser alumni;
+    private FirebaseUser user;
     private DatabaseReference reference;
-    private String alumniID;
+    private String userID;
     private Button SaveProfile;
     private EditText Alname,Alyear,Albranch,Alteam;
     @Override
@@ -52,9 +52,9 @@ public class EditProfileAlumni extends AppCompatActivity {
         img = findViewById(R.id.alumniPhoto2);
         auth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        alumni = auth.getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Alumni");
-        alumniID = alumni.getUid();
+        user = auth.getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
         SaveProfile = findViewById(R.id.alumnieditProfileBtn);
         Alname = findViewById(R.id.alumniNameEdit);
         Alyear = findViewById(R.id.alumniPassoutYearEdit);
@@ -77,7 +77,7 @@ public class EditProfileAlumni extends AppCompatActivity {
             }
         });
 
-        reference.child(alumniID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Alumni alumniProfile = snapshot.getValue(Alumni.class);                        // displaying all the data in edittext
@@ -119,7 +119,7 @@ public class EditProfileAlumni extends AppCompatActivity {
 
     private void updateProfile(String Alname, String Alyear, String Albranch, String Alteam) {
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Alumni").child(alumni.getUid());
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
 
         HashMap<String, Object> edited = new HashMap<>();
 

@@ -36,9 +36,9 @@ public class ProfileStudent extends AppCompatActivity {
     private ImageView img;
     private FirebaseAuth auth;
     private TextView StName,StYear,StBranch,StTeam;
-    private FirebaseUser student;
+    private FirebaseUser user;
     private DatabaseReference reference;
-    private String studentID;
+    private String userID;
     private Button EditProfile;
 
     @Override
@@ -50,9 +50,9 @@ public class ProfileStudent extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         auth = FirebaseAuth.getInstance();
-        student=auth.getCurrentUser();
-        reference= FirebaseDatabase.getInstance().getReference("Student");
-        studentID=student.getUid();
+        user=auth.getCurrentUser();
+        reference= FirebaseDatabase.getInstance().getReference("Users");
+        userID=user.getUid();
         img=findViewById(R.id.Photo1);
         StName=findViewById(R.id.StudentProfileName);
         StYear=findViewById(R.id.StudentProfileYearFill);
@@ -75,7 +75,7 @@ public class ProfileStudent extends AppCompatActivity {
                 Picasso.get().load(uri).into(img);
             }
         });
-        reference.child(studentID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Student studentProfile = snapshot.getValue(Student.class);

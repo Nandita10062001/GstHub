@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -41,9 +42,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     private GoogleSignInClient googleSignInClient;
     private View view;
     FirebaseUser user;
-   FloatingActionButton floatingActionButton;
-
-
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,54 +75,52 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(HomePage.this,CreatePost.class));
             }
         });
-        
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setSelectedItemId(R.id.Dashboard);
+                BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+                bottomNavigationView.setSelectedItemId(R.id.Dashboard);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-            private boolean loadFragment (Fragment fragment) {
-                if (fragment != null) {
+                    private boolean loadFragment(Fragment fragment) {
+                        if (fragment != null) {
 
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.fragment_container, fragment)
-                            .commit();
-                    return true;
-                }
-                return  false;
-            }
+                            getSupportFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.fragment_container, fragment)
+                                    .commit();
+                            return true;
+                        }
+                        return false;
+                    }
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment = null;
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Fragment fragment = null;
 
-                switch(item.getItemId())
-                {
-                    case R.id.Dashboard:
-                        fragment = new DashboardFragment();
-                        break;
+                        switch (item.getItemId()) {
+                            case R.id.Dashboard:
+                                fragment = new DashboardFragment();
+                                break;
 
-                    case R.id.Forum:
-                        fragment = new ForumFragment();
-                        break;
+                            case R.id.Forum:
+                                fragment = new ForumFragment();
+                                break;
 
-                    case R.id.Classroom:
-                        fragment = new ClassroomFragment();
-                        break;
-                }
-                return loadFragment(fragment);
-            }
-        });
+                            case R.id.Classroom:
+                                fragment = new ClassroomFragment();
+                                break;
+                        }
+                        return loadFragment(fragment);
+                    }
+                });
 
     }
 
 
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
                 case R.id.profile:
-                startActivity(new Intent(getApplicationContext(), ProfileGuest.class));
+                startActivity(new Intent(getApplicationContext(), ProfileStudent.class));
                 break;
 
                 case R.id.info:

@@ -36,9 +36,9 @@ public class ProfileGuest extends AppCompatActivity {
     private ImageView img;
     private FirebaseAuth auth;
     private TextView GuName,GuContact,GuEmail, GuGuestType;
-    private FirebaseUser guest;
+    private FirebaseUser user;
     private DatabaseReference reference;
-    private String guestID;
+    private String userID;
     private Button EditProfile;
 
     @Override
@@ -50,9 +50,9 @@ public class ProfileGuest extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         auth = FirebaseAuth.getInstance();
-        guest=auth.getCurrentUser();
-        reference= FirebaseDatabase.getInstance().getReference("Guest");
-        guestID=guest.getUid();
+        user=auth.getCurrentUser();
+        reference= FirebaseDatabase.getInstance().getReference("Users");
+        userID=user.getUid();
         img=findViewById(R.id.guestPhoto1);
         GuName=findViewById(R.id.GuestProfileName);
         GuContact=findViewById(R.id.GuestNumberFill);
@@ -75,7 +75,7 @@ public class ProfileGuest extends AppCompatActivity {
                 Picasso.get().load(uri).into(img);
             }
         });
-        reference.child(guestID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Guest guestProfile = snapshot.getValue(Guest.class);
@@ -89,7 +89,7 @@ public class ProfileGuest extends AppCompatActivity {
                     GuName.setText(Name);
                     GuEmail.setText(Email);
                     GuContact.setText(Contact);
-                    GuGuestType.setText((CharSequence) GuestType);
+                    GuGuestType.setText(GuestType);
                 }
             }
 

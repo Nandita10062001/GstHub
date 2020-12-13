@@ -34,9 +34,9 @@ public class ProfileAlumni extends AppCompatActivity {
     private ImageView img;
     private FirebaseAuth auth;
     private TextView AlName,AlYear,AlBranch,AlTeam;
-    private FirebaseUser alumni;
+    private FirebaseUser user;
     private DatabaseReference reference;
-    private String alumniID;
+    private String userID;
     private Button EditProfile;
 
     @Override
@@ -48,9 +48,9 @@ public class ProfileAlumni extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         auth = FirebaseAuth.getInstance();
-        alumni=auth.getCurrentUser();
-        reference= FirebaseDatabase.getInstance().getReference("Alumni");
-        alumniID=alumni.getUid();
+        user=auth.getCurrentUser();
+        reference= FirebaseDatabase.getInstance().getReference("Users");
+        userID=user.getUid();
         img=findViewById(R.id.alumniPhoto1);
         AlName=findViewById(R.id.AlumniProfileName);
         AlYear=findViewById(R.id.AlumniProfilePassoutYearFill);
@@ -73,7 +73,7 @@ public class ProfileAlumni extends AppCompatActivity {
                 Picasso.get().load(uri).into(img);
             }
         });
-        reference.child(alumniID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Alumni alumniProfile = snapshot.getValue(Alumni.class);
