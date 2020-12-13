@@ -58,7 +58,6 @@
         app:fabCradleRoundedCornerRadius="20dp"
         app:fabCradleVerticalOffset="15dp"
         app:hideOnScroll="true"
-
         app:paddingLeftSystemWindowInsets="false"
         app:paddingRightSystemWindowInsets="true">
 

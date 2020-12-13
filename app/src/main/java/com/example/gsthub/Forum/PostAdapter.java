@@ -4,6 +4,7 @@ package com.example.gsthub.Forum;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,8 @@ public class PostAdapter extends FirebaseRecyclerAdapter<User,PostAdapter.myview
     }
 
     class myviewholder extends RecyclerView.ViewHolder {
-        TextView Description;
+        TextView Description, timeStamp, Name;
+        ImageView userDP, postImage;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
