@@ -123,7 +123,7 @@ public class RegisterGuest extends AppCompatActivity {
                         if(task.isSuccessful())
                         {
                             Guest guest = new Guest(Name,Email,Contact,GuestType);
-                            FirebaseDatabase.getInstance().getReference("Guest")
+                            FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(guest).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

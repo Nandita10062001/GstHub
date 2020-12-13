@@ -80,35 +80,35 @@ public class CreatePost extends AppCompatActivity {
 
         pd = new ProgressDialog(this);
 
-        /*int day = cal.get(Calendar.DAY_OF_MONTH);
-        int month = cal.get(Calendar.MONTH);
-        int year = cal.get(Calendar.YEAR);
-        int hour = cal.get(Calendar.HOUR);
-        int min = cal.get(Calendar.MINUTE);
-        month+=1;
-        Time = "";
-        Date = "";
-        String ampm="AM";
-
-        if(cal.get(Calendar.AM_PM) ==1)
-        {
-            ampm = "PM";
-        }
-
-        if(hour<10)
-        {
-            Time += "0";
-        }
-        Time += hour;
-        Time +=":";
-
-        if(min<10) {
-            Time += "0";
-        }
-
-        Time +=min;
-        Time +=(" "+ampm);
-        Date = day+"/"+month+"/"+year;*/
+//        /*int day = cal.get(Calendar.DAY_OF_MONTH);
+//        int month = cal.get(Calendar.MONTH);
+//        int year = cal.get(Calendar.YEAR);
+//        int hour = cal.get(Calendar.HOUR);
+//        int min = cal.get(Calendar.MINUTE);
+//        month+=1;
+//        Time = "";
+//        Date = "";
+//        String ampm="AM";
+//
+//        if(cal.get(Calendar.AM_PM) ==1)
+//        {
+//            ampm = "PM";
+//        }
+//
+//        if(hour<10)
+//        {
+//            Time += "0";
+//        }
+//        Time += hour;
+//        Time +=":";
+//
+//        if(min<10) {
+//            Time += "0";
+//        }
+//
+//        Time +=min;
+//        Time +=(" "+ampm);
+//        Date = day+"/"+month+"/"+year;*/
 
         cameraPermissions = new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE};
