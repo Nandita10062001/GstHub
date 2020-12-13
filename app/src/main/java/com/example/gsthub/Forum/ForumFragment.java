@@ -40,7 +40,7 @@ public class ForumFragment extends Fragment {
     private DataAdapter requestAdapter;
     private ArrayList<Data> postLists;
     private ProgressDialog pd;
-    FloatingActionButton fab;
+
 
     public ForumFragment() {
         // Required empty public constructor
@@ -74,13 +74,7 @@ public class ForumFragment extends Fragment {
         Posts.setAdapter(requestAdapter);*/
 
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.button);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), CreatePost.class));
-            }
-        });
+
         //AddPosts();
         return view;
     }

@@ -13,7 +13,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.example.gsthub.Forum.CreatePost;
 import com.example.gsthub.Forum.Forum;
 import com.example.gsthub.Forum.ForumFragment;
 import com.example.gsthub.profile.ProfileAlumni;
@@ -24,6 +26,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,7 +39,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     ActionBarDrawerToggle actionBarDrawerToggle;
     FirebaseAuth mAuth;
     private GoogleSignInClient googleSignInClient;
+    private View view;
     FirebaseUser user;
+   FloatingActionButton floatingActionButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +65,18 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
+
        /*drawerLayout.addDrawerListener(actionBarDrawerToggle);
        actionBarDrawerToggle.syncState();*/
 
+        floatingActionButton = findViewById(R.id.floatingactionbutton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomePage.this,CreatePost.class));
+            }
+        });
+        
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.Dashboard);
