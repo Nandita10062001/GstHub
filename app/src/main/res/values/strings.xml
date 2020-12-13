@@ -51,6 +51,7 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aboutus">This is an online forum app specially designed for the students of SIES GST where we provide a platform for all the gstians to get their queries out there which can be answered by not only teachers but also by seniors, alumni and others. \nCreated by \nNandita Nandakumar \nPournami Pottekat \nNipun Manghi \nRohitRaghuram</string>
 
 
 </resources>
