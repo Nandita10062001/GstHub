@@ -8,7 +8,7 @@ public class Student
     {
     }
 
-    public Student(String sName,String sEmail,String sYear,String sBranch,String sTeam )
+    public Student(String sName,String sEmail,String sYear,String sBranch,String sTeam)
     {
        this.sName=sName;
        this.sEmail=sEmail;

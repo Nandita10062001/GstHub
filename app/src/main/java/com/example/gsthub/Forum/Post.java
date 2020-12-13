@@ -1,18 +1,36 @@
 package com.example.gsthub.Forum;
 
 public class Post {
-    String pId, pDescrp, pImage, pTime, pName, pEmail, uid;
+    String pId, pDescr, pImage, pTime, pName, pEmail, uid, pDp, pTitle;
 
     public Post() {}
 
-    public Post(String pId,String pDescrp, String pImage, String pTime, String pName, String pEmail, String uid) {
+    public Post(String pId,String pDescr, String pImage, String pTime, String pName, String pEmail, String uid, String pDp, String pTitle) {
         this.pId = pId;
-        this.pDescrp = pDescrp;
+        this.pDescr = pDescr;
         this.pImage = pImage;
         this.pTime = pTime;
         this.pName = pName;
         this.pEmail = pEmail;
         this.uid = uid;
+        this.pDp = pDp;
+        this.pTitle = pTitle;
+    }
+
+    public String getpTitle() {
+        return pTitle;
+    }
+
+    public void setpTitle(String pTitle) {
+        this.pTitle = pTitle;
+    }
+
+    public String getpDp() {
+        return pDp;
+    }
+
+    public void setpDp(String pDp) {
+        this.pDp = pDp;
     }
 
     public String getpId() {
@@ -23,12 +41,12 @@ public class Post {
         this.pId = pId;
     }
 
-    public String getpDescrp() {
-        return pDescrp;
+    public String getpDescr() {
+        return pDescr;
     }
 
-    public void setpDescrp(String pDescrp) {
-        this.pDescrp = pDescrp;
+    public void setpDescr(String pDescr) {
+        this.pDescr = pDescr;
     }
 
     public String getpImage() {

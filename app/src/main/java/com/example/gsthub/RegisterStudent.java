@@ -54,7 +54,6 @@ public class RegisterStudent extends AppCompatActivity {
     private FirebaseAuth auth;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

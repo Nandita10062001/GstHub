@@ -1,28 +1,21 @@
 package com.example.gsthub;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.gsthub.Forum.CreatePost;
-import com.example.gsthub.Forum.Forum;
 import com.example.gsthub.Forum.ForumFragment;
-import com.example.gsthub.profile.ProfileAlumni;
-import com.example.gsthub.profile.ProfileGuest;
 import com.example.gsthub.profile.ProfileStudent;
-import com.example.gsthub.profile.ProfileTeacher;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -31,8 +24,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
@@ -76,45 +67,35 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             }
         });
 
-                BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-                bottomNavigationView.setSelectedItemId(R.id.Dashboard);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-                bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-                    private boolean loadFragment(Fragment fragment) {
-                        if (fragment != null) {
-
-                            getSupportFragmentManager()
-                                    .beginTransaction()
-                                    .replace(R.id.fragment_container, fragment)
-                                    .commit();
-                            return true;
-                        }
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        Fragment fragment = null;
-
-                        switch (item.getItemId()) {
-                            case R.id.Dashboard:
-                                fragment = new DashboardFragment();
-                                break;
-
-                            case R.id.Forum:
-                                fragment = new ForumFragment();
-                                break;
-
-                            case R.id.Classroom:
-                                fragment = new ClassroomFragment();
-                                break;
-                        }
-                        return loadFragment(fragment);
-                    }
-                });
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new DashboardFragment()).commit();
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+                    switch (item.getItemId()) {
+                        case R.id.Dashboard:
+                            selectedFragment = new DashboardFragment();
+                            break;
+                        case R.id.Forum:
+                            selectedFragment = new ForumFragment();
+                            break;
+                        case R.id.Classroom:
+                            selectedFragment = new ClassroomFragment();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
+                    return true;
+                }
+            };
 
 
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

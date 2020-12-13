@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
-import com.example.gsthub.Forum.Forum;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Classroom extends AppCompatActivity {
@@ -33,7 +32,7 @@ public class Classroom extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.Forum:
-                        startActivity(new Intent(getApplicationContext(), Forum.class));
+                        //startActivity(new Intent(getApplicationContext(), Forum.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.Classroom:

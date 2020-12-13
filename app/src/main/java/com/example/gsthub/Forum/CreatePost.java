@@ -46,7 +46,7 @@ public class CreatePost extends AppCompatActivity {
     ProgressDialog pd;
 
     Button PostBtn, imageBtn;
-    EditText description;
+    EditText title, description;
 
     String name, email, uid, dp;
 
@@ -56,8 +56,6 @@ public class CreatePost extends AppCompatActivity {
 
     Uri image_uri = null;
 
-    Calendar cal;
-    String Time, Date;
 
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final int STORAGE_REQUEST_CODE = 200;
@@ -74,41 +72,12 @@ public class CreatePost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_post);
 
-        description = findViewById(R.id.question);
+        title = findViewById(R.id.Title);
+        description = findViewById(R.id.Description);
         PostBtn = findViewById(R.id.postbtn);
         imageBtn = findViewById(R.id.addImage);
 
         pd = new ProgressDialog(this);
-
-//        /*int day = cal.get(Calendar.DAY_OF_MONTH);
-//        int month = cal.get(Calendar.MONTH);
-//        int year = cal.get(Calendar.YEAR);
-//        int hour = cal.get(Calendar.HOUR);
-//        int min = cal.get(Calendar.MINUTE);
-//        month+=1;
-//        Time = "";
-//        Date = "";
-//        String ampm="AM";
-//
-//        if(cal.get(Calendar.AM_PM) ==1)
-//        {
-//            ampm = "PM";
-//        }
-//
-//        if(hour<10)
-//        {
-//            Time += "0";
-//        }
-//        Time += hour;
-//        Time +=":";
-//
-//        if(min<10) {
-//            Time += "0";
-//        }
-//
-//        Time +=min;
-//        Time +=(" "+ampm);
-//        Date = day+"/"+month+"/"+year;*/
 
         cameraPermissions = new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -144,17 +113,22 @@ public class CreatePost extends AppCompatActivity {
         PostBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String postTitle = title.getText().toString().trim();
                 String descrp = description.getText().toString().trim();
+                if (TextUtils.isEmpty(postTitle)) {
+                    Toast.makeText(CreatePost.this, "Write Title!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (TextUtils.isEmpty(descrp)) {
-                    Toast.makeText(CreatePost.this, "Ask Question!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreatePost.this, "Write Description!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (image_uri==null) {
-                    uploadData(descrp, "noImage");
+                    uploadData(postTitle, descrp, "noImage");
                 }
                 else {
-                    uploadData(descrp, String.valueOf(image_uri));
+                    uploadData(postTitle, descrp, String.valueOf(image_uri));
 
                 }
 
@@ -167,7 +141,7 @@ public class CreatePost extends AppCompatActivity {
 
     }
 
-    private void uploadData(final String descrp, String uri) {
+    private void uploadData(final String postTitle, final String descrp, String uri) {
         pd.setMessage("Posting...");
         pd.show();
 
@@ -192,6 +166,7 @@ public class CreatePost extends AppCompatActivity {
                                 hashMap.put("pName", name);
                                 hashMap.put("pEmail", email);
                                 hashMap.put("pId", timeStamp);
+                                hashMap.put("pTitle", postTitle);
                                 hashMap.put("pDescr", descrp);
                                 hashMap.put("pImage", downloadUri);
                                 hashMap.put("pTime", timeStamp);
@@ -206,7 +181,7 @@ public class CreatePost extends AppCompatActivity {
                                                 Toast.makeText(CreatePost.this, "Post published", Toast.LENGTH_SHORT).show();
                                                 description.setText("");
                                                 image_uri = null;
-
+                                                startActivity(new Intent(CreatePost.this, ForumFragment.class));
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
@@ -238,6 +213,7 @@ public class CreatePost extends AppCompatActivity {
             hashMap.put("pName", name);
             hashMap.put("pEmail", email);
             hashMap.put("pId", timeStamp);
+            hashMap.put("pTitle", postTitle);
             hashMap.put("pDescr", descrp);
             hashMap.put("pImage", "noImage");
             hashMap.put("pTime", timeStamp);
@@ -279,7 +255,7 @@ public class CreatePost extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (i == 0) {
-                    if (!checkCameraPermission()) {
+                    if (checkCameraPermission()) {
                         requestCameraPermission();
                     }
                     else {
@@ -288,7 +264,7 @@ public class CreatePost extends AppCompatActivity {
 
                 }
                 if (i == 1) {
-                    if (!checkStoragePermission()) {
+                    if (checkStoragePermission()) {
                         requestStoragePermission();
                     }
                     else {
@@ -299,10 +275,7 @@ public class CreatePost extends AppCompatActivity {
             }
         });
 
-        builder.create().show();;
-
-
-
+        builder.create().show();
     }
 
     private void checkUserStatus() {

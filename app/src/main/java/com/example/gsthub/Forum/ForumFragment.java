@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.gsthub.HomePage;
@@ -34,15 +35,12 @@ import java.util.List;
 
 
 public class ForumFragment extends Fragment {
-    private View view;
-    private RecyclerView Posts;
-    private DatabaseReference ref;
-    FirebaseAuth auth;
-    private DataAdapter requestAdapter;
-    private ArrayList<Data> postLists;
-    private ProgressDialog pd;
-
-
+     RecyclerView recyclerView;
+     DatabaseReference ref;
+     FirebaseAuth auth;
+     PostAdapter postAdapter;
+     List<Post> postLists;
+     ProgressDialog pd;
 
     public ForumFragment() {
         // Required empty public constructor
@@ -51,59 +49,52 @@ public class ForumFragment extends Fragment {
         @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_forum, container, false);
+            View view = inflater.inflate(R.layout.fragment_forum, container, false);
+
+            auth = FirebaseAuth.getInstance();
+
+            recyclerView = view.findViewById(R.id.recyclerViewForum);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+            layoutManager.setStackFromEnd(true);
+            layoutManager.setReverseLayout(true);
+
+            recyclerView.setLayoutManager(layoutManager);
 
 
-            //Posts =(RecyclerView)view.findViewById(R.id.recyclerViewForum);
-        //Posts.setLayoutManager(new LinearLayoutManager(getContext()));
+            postLists = new ArrayList<>();
+            loadPosts();
 
-        /*ref = FirebaseDatabase.getInstance().getReference();
-        postLists = new ArrayList<>();
+            return view;
 
-        pd = new ProgressDialog(getActivity());
-        pd.setMessage("Loading...");
-        pd.setCancelable(true);
-        pd.setCanceledOnTouchOutside(false);
-
-        auth = FirebaseAuth.getInstance();
-        getActivity().setTitle("Forum");*/
-
-        /*requestAdapter = new DataAdapter(postLists);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        Posts.setLayoutManager(layoutManager);
-        Posts.setItemAnimator(new DefaultItemAnimator());
-        Posts.addItemDecoration(new DividerItemDecoration(getActivity(),LinearLayoutManager.VERTICAL));
-        Posts.setAdapter(requestAdapter);*/
-
-
-
-        //AddPosts();
-        return view;
     }
 
-    private void AddPosts() {
-        Query allPosts = ref.child("posts");
-        allPosts.addListenerForSingleValueEvent(new ValueEventListener() {
+
+    private void loadPosts() {
+        ref = FirebaseDatabase.getInstance().getReference("Posts");
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    for (DataSnapshot single : snapshot.getChildren()) {
-                        Data customUserData = single.getValue(Data.class);
-                        postLists.add(customUserData);
-                        requestAdapter.notifyDataSetChanged();
-                    }
-
-                } else {
-                    Toast.makeText(getActivity(), "Database is empty now!", Toast.LENGTH_LONG).show();
-                    pd.dismiss();
+                postLists.clear();
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    Post post = ds.getValue(Post.class);
+                    postLists.add(post);
+                    postAdapter = new PostAdapter(getActivity(), postLists);
+                    recyclerView.setAdapter(postAdapter);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("Users", error.getMessage());
+                Toast.makeText(getActivity(), ""+error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
+
+    private void searchPosts(String searchQuery) {
+
+    }
+
+
 }

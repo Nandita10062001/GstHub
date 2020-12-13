@@ -20,10 +20,10 @@
         <activity
             android:name=".AboutUs"
             android:parentActivityName=".HomePage" />
-        <activity android:name=".Forum.Forum"/>
         <activity android:name=".Forum.CreatePost"/>
         <activity android:name=".HomePage2" />
         <activity android:name=".Classroom" />
+        <activity android:name=".ForgotPassword"/>
         <activity android:name=".Dashboard" />
         <activity android:name=".HomePage" />
         <activity
