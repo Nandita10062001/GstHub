@@ -3,7 +3,7 @@ package com.example.gsthub.Forum;
 import java.io.Serializable;
 
 public class Data implements Serializable {
-    private String Username, Description, Time, Date;
+    public String Username, Description, Time, Date;
 
     public Data(String username, String description, String time, String date) {
         Username = username;
