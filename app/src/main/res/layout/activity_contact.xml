@@ -42,8 +42,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/rohcard"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:elevation="12dp"
             android:innerRadius="0dp"
@@ -58,8 +58,8 @@
 
             <ImageView
                 android:id="@+id/RohPhoto"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_below="@+id/Create"
                 android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
@@ -98,8 +98,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/porocard"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:elevation="12dp"
             android:innerRadius="0dp"
@@ -114,8 +114,8 @@
 
             <ImageView
                 android:id="@+id/PoroPhoto"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_below="@+id/Create"
                 android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
@@ -153,8 +153,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:elevation="12dp"
             android:innerRadius="0dp"
@@ -168,8 +168,8 @@
 
             <ImageView
                 android:id="@+id/TeamPhoto"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_below="@+id/Create"
                 android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
@@ -180,8 +180,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/nancard"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:elevation="12dp"
             android:innerRadius="0dp"
@@ -196,8 +196,8 @@
 
             <ImageView
                 android:id="@+id/NanPhoto"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_below="@+id/Create"
                 android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
@@ -238,7 +238,8 @@
             android:id="@+id/toolbar2"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
+            android:background="#292a73"
+            app:titleTextColor="#fff"
             tools:ignore="MissingConstraints"
             xmlns:tools="http://schemas.android.com/tools" />
 
@@ -254,10 +255,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintHorizontal_bias="0.113"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.122" />
+            app:layout_constraintVertical_bias="0.14" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

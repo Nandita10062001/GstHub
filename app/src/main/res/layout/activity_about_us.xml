@@ -10,7 +10,7 @@
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
+        android:background="#292a73"
         tools:ignore="MissingConstraints" />
 
     <com.airbnb.lottie.LottieAnimationView
@@ -52,6 +52,7 @@
         android:padding="10dp"
         android:text="@string/aboutus"
         android:textSize="14sp"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

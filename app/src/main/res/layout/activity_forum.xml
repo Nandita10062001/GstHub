@@ -10,7 +10,9 @@
         android:id="@+id/toolbarForum"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
+        android:background="#292a73"
+        app:titleTextColor="#fff"
+
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewForum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:backgroundTint="#3a9efd"
+        android:backgroundTint="#f7a400"
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
