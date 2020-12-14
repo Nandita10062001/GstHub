@@ -38,6 +38,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -76,6 +77,7 @@ public class CreatePost extends AppCompatActivity {
         description = findViewById(R.id.Description);
         PostBtn = findViewById(R.id.postbtn);
         imageBtn = findViewById(R.id.addImage);
+
 
         pd = new ProgressDialog(this);
 

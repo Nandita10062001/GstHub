@@ -36,9 +36,9 @@ public class ProfileGuest extends AppCompatActivity {
     private ImageView img;
     private FirebaseAuth auth;
     private TextView GuName,GuContact,GuEmail, GuGuestType;
-    private FirebaseUser user;
+    private FirebaseUser Guest;
     private DatabaseReference reference;
-    private String userID;
+    private String GuestID;
     private Button EditProfile;
 
     @Override
@@ -50,9 +50,9 @@ public class ProfileGuest extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         auth = FirebaseAuth.getInstance();
-        user=auth.getCurrentUser();
-        reference= FirebaseDatabase.getInstance().getReference("Users");
-        userID=user.getUid();
+        Guest=auth.getCurrentUser();
+        reference= FirebaseDatabase.getInstance().getReference("Guest");
+        GuestID=Guest.getUid();
         img=findViewById(R.id.guestPhoto1);
         GuName=findViewById(R.id.GuestProfileName);
         GuContact=findViewById(R.id.GuestNumberFill);
@@ -75,7 +75,7 @@ public class ProfileGuest extends AppCompatActivity {
                 Picasso.get().load(uri).into(img);
             }
         });
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(GuestID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Guest guestProfile = snapshot.getValue(Guest.class);

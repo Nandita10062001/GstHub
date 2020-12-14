@@ -41,9 +41,9 @@ public class EditProfileStudent extends AppCompatActivity {
  FirebaseAuth auth;
     private Uri imgUri;
     private StorageReference storageReference;
-    private FirebaseUser user;
+    private FirebaseUser Student;
     private DatabaseReference reference;
-    private String userID;
+    private String StudentID;
     private Button SaveProfile;
     private EditText Stname,Styear,Stbranch,Stteam;
     @Override
@@ -53,9 +53,9 @@ public class EditProfileStudent extends AppCompatActivity {
         img = findViewById(R.id.Photo2);
         auth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-       user = auth.getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
+        Student= auth.getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Student");
+        StudentID = Student.getUid();
         SaveProfile = findViewById(R.id.editProfileBtn);
         Stname = findViewById(R.id.studentNameEdit);
         Styear = findViewById(R.id.studentYearEdit);
@@ -78,7 +78,7 @@ public class EditProfileStudent extends AppCompatActivity {
             }
         });
 
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(StudentID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Student studentProfile = snapshot.getValue(Student.class);                        // displaying all the data in edittext
@@ -120,7 +120,7 @@ public class EditProfileStudent extends AppCompatActivity {
 
     private void updateProfile(String Stname, String Styear, String Stbranch, String Stteam) {
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student").child(Student.getUid());
 
         HashMap<String, Object> edited = new HashMap<>();
 

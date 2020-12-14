@@ -41,9 +41,9 @@ public class EditProfileGuest extends AppCompatActivity{
     FirebaseAuth auth;
     private Uri imgUri;
     private StorageReference storageReference;
-    private FirebaseUser user;
+    private FirebaseUser Guest;
     private DatabaseReference reference;
-    private String userID;
+    private String GuestID;
     private Button SaveProfile;
     private EditText Guname,Guemail,Gucontact,Guguesttype;
     @Override
@@ -53,9 +53,9 @@ public class EditProfileGuest extends AppCompatActivity{
         img = findViewById(R.id.guestPhoto2);
         auth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-        user = auth.getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
+        Guest = auth.getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Guest");
+        GuestID = Guest.getUid();
         SaveProfile = findViewById(R.id.guesteditProfileBtn);
         Guname = findViewById(R.id.guestNameEdit);
         Guemail = findViewById(R.id.guestEmailEdit);
@@ -78,7 +78,7 @@ public class EditProfileGuest extends AppCompatActivity{
             }
         });
 
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(GuestID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Guest guestProfile = snapshot.getValue(Guest.class);                        // displaying all the data in edittext
@@ -123,7 +123,7 @@ public class EditProfileGuest extends AppCompatActivity{
 
     private void updateProfile(String Guname, String Guemail, String Gucontact, String Guguesttype) {
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Guest").child(Guest.getUid());
 
         HashMap<String, Object> edited = new HashMap<>();
 

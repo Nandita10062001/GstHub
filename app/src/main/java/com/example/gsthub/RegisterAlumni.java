@@ -122,7 +122,7 @@ public class RegisterAlumni extends AppCompatActivity {
                         {
 
                             Alumni alumni = new Alumni(Name,Email,Year,Branch,team);
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            FirebaseDatabase.getInstance().getReference("Alumni")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(alumni).addOnCompleteListener(new OnCompleteListener<Void>() {
 
