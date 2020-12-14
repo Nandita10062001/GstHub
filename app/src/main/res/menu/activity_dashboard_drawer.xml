@@ -6,6 +6,18 @@
     <group android:checkableBehavior="single">
 
         <item
+            android:title="Forum"
+            android:icon="@drawable/ic_baseline_people_24"
+            android:id="@+id/Forum"/>
+        <item
+            android:title="Dashboard"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:id="@+id/Dashboard"/>
+        <item
+            android:title="Classroom"
+            android:icon="@drawable/ic_baseline_book_24"
+            android:id="@+id/Classroom"/>
+        <item
             android:id="@+id/profile"
             android:icon="@drawable/ic_baseline_person_pin_24"
             android:title="Profile" />
@@ -13,7 +25,6 @@
             android:id="@+id/info"
             android:icon="@drawable/ic_baseline_menu_24"
             android:title="About us" />
-
 
         <item
             android:id="@+id/contact"

@@ -9,33 +9,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfileAlumni"/>
-        <activity android:name=".EditProfileTeacher"/>
-        <activity android:name=".EditProfileGuest"/>
-        <activity android:name=".EditProfileStudent"/>
+        <activity android:name=".Forum.Forum"></activity>
+        <activity android:name=".EditProfileAlumni" />
+        <activity android:name=".EditProfileTeacher" />
+        <activity android:name=".EditProfileGuest" />
+        <activity android:name=".EditProfileStudent" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".ForgotPassword"/>
+        <activity android:name=".ForgotPassword" />
         <activity
             android:name=".Contact"
             android:parentActivityName=".HomePage" />
         <activity
             android:name=".AboutUs"
             android:parentActivityName=".HomePage" />
-        <activity android:name=".Forum.CreatePost"/>
+        <activity android:name=".Forum.CreatePost" />
         <activity android:name=".HomePage2" />
         <activity android:name=".Classroom" />
-        <activity android:name=".ForgotPassword"/>
         <activity android:name=".Dashboard" />
         <activity android:name=".HomePage" />
         <activity
             android:name=".profile.ProfileTeacher"
-            android:parentActivityName=".HomePage"/>
-        <activity android:name=".profile.ProfileStudent"
-            android:parentActivityName=".HomePage"/>
-        <activity android:name=".profile.ProfileGuest"
-            android:parentActivityName=".HomePage"/>
-        <activity android:name=".profile.ProfileAlumni"
-            android:parentActivityName=".HomePage"/>
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".profile.ProfileStudent"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".profile.ProfileGuest"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".profile.ProfileAlumni"
+            android:parentActivityName=".HomePage" />
         <activity android:name=".RegisterTeacher" />
         <activity android:name=".RegisterStudent" />
         <activity android:name=".RegisterAlumni" />
