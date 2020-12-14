@@ -87,15 +87,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Upvote"
-                android:layout_marginEnd="100dp"
                 android:drawableLeft="@drawable/ic_baseline_arrow_upward_24"
                 android:background="@android:color/transparent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pLikes"
+                android:text="likes"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"/>
 
             <Button
                 android:id="@+id/comment_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:background="@android:color/transparent"
                 android:text="Comment"/>
         </LinearLayout>

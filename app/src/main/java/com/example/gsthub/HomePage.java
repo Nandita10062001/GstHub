@@ -58,52 +58,19 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
 
-       /*drawerLayout.addDrawerListener(actionBarDrawerToggle);
-       actionBarDrawerToggle.syncState();*/
-
-
-
-       // BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-        //bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
-
-        //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                //new DashboardFragment()).commit();
 
     }
 
-    /*private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-                    switch (item.getItemId()) {
-                        case R.id.Dashboard:
-                            selectedFragment = new DashboardFragment();
-                            break;
-                        case R.id.Forum:
-                            selectedFragment = new ForumFragment();
-                            break;
-                        case R.id.Classroom:
-                            selectedFragment = new ClassroomFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-                    return true;
-                }
-            };*/
-
 
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment newFragment;
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
         switch (item.getItemId()) {
             case R.id.Forum:
-                startActivity(new Intent(getApplicationContext(), Forum.class));
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ForumFragment()).commit();
                 break;
             case R.id.Dashboard:
-                startActivity(new Intent(getApplicationContext(), DashboardFragment.class));
+                startActivity(new Intent(getApplicationContext(), Dashboard.class));
                 break;
             case R.id.Classroom:
                 startActivity(new Intent(getApplicationContext(), Classroom.class));

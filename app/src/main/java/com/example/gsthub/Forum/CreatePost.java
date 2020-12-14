@@ -230,6 +230,7 @@ public class CreatePost extends AppCompatActivity {
                             Toast.makeText(CreatePost.this, "Post published", Toast.LENGTH_SHORT).show();
                             description.setText("");
                             image_uri = null;
+                            startActivity(new Intent(CreatePost.this, Forum.class));
 
                         }
                     })

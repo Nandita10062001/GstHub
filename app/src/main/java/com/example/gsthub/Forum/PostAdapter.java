@@ -180,6 +180,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myviewholder> 
             timeStamp = itemView.findViewById(R.id.timeStamp);
             Name = itemView.findViewById(R.id.Username);
             userDP = itemView.findViewById(R.id.userDp);
+            likes = itemView.findViewById(R.id.pLikes);
             postImage = itemView.findViewById(R.id.postImage);
             upvoteBtn = itemView.findViewById(R.id.upvote_button);
             commentBtn = itemView.findViewById(R.id.comment_button);
