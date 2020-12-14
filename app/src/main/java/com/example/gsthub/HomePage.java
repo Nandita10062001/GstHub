@@ -8,12 +8,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.gsthub.Forum.CreatePost;
+import com.example.gsthub.Forum.Forum;
 import com.example.gsthub.Forum.ForumFragment;
 import com.example.gsthub.profile.ProfileStudent;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -59,23 +61,17 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
        /*drawerLayout.addDrawerListener(actionBarDrawerToggle);
        actionBarDrawerToggle.syncState();*/
 
-        floatingActionButton = findViewById(R.id.floatingactionbutton);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomePage.this,CreatePost.class));
-            }
-        });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new DashboardFragment()).commit();
+       // BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        //bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+
+        //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                //new DashboardFragment()).commit();
 
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+    /*private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -95,24 +91,33 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                             selectedFragment).commit();
                     return true;
                 }
-            };
+            };*/
 
 
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment newFragment;
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
         switch (item.getItemId()) {
-                case R.id.profile:
+            case R.id.Forum:
+                startActivity(new Intent(getApplicationContext(), Forum.class));
+                break;
+            case R.id.Dashboard:
+                startActivity(new Intent(getApplicationContext(), DashboardFragment.class));
+                break;
+            case R.id.Classroom:
+                startActivity(new Intent(getApplicationContext(), Classroom.class));
+                break;
+            case R.id.profile:
                 startActivity(new Intent(getApplicationContext(), ProfileStudent.class));
                 break;
-
-                case R.id.info:
+            case R.id.info:
                 startActivity(new Intent(getApplicationContext(), AboutUs.class));
                 break;
-
-                case R.id.contact:
+            case R.id.contact:
                 startActivity(new Intent(getApplicationContext(), Contact.class));
                 break;
-
-                case R.id.logout:
+            case R.id.logout:
                 mAuth.signOut();
                 googleSignInClient.signOut();
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
