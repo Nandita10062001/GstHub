@@ -1,11 +1,11 @@
 package com.example.gsthub.Forum;
 
 public class Post {
-    String pId, pDescr, pImage, pTime, pName, pEmail, uid, pDp, pTitle;
+    String pId, pDescr, pImage, pTime, pName, pEmail, uid, pDp, pTitle, pLikes;
 
     public Post() {}
 
-    public Post(String pId,String pDescr, String pImage, String pTime, String pName, String pEmail, String uid, String pDp, String pTitle) {
+    public Post(String pId,String pDescr, String pImage, String pTime, String pName, String pEmail, String uid, String pDp, String pTitle, String pLikes) {
         this.pId = pId;
         this.pDescr = pDescr;
         this.pImage = pImage;
@@ -15,6 +15,15 @@ public class Post {
         this.uid = uid;
         this.pDp = pDp;
         this.pTitle = pTitle;
+        this.pLikes = pLikes;
+    }
+
+    public String getpLikes() {
+        return pLikes;
+    }
+
+    public void setpLikes(String pLikes) {
+        this.pLikes = pLikes;
     }
 
     public String getpTitle() {

@@ -87,14 +87,14 @@ public class CreatePost extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         checkUserStatus();
 
-        ref = FirebaseDatabase.getInstance().getReference("Users");
-        Query query = ref.orderByChild("pEmail").equalTo(email);
+        ref = FirebaseDatabase.getInstance().getReference("Student");
+        Query query = ref.orderByChild("sEmail").equalTo(email);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds: snapshot.getChildren()) {
-                    name = "" + ds.child("pName").getValue();
-                    email = "" + ds.child("pEmail").getValue();
+                    name = "" + ds.child("sName").getValue();
+                    email = "" + ds.child("sEmail").getValue();
                 }
 
             }
@@ -183,7 +183,7 @@ public class CreatePost extends AppCompatActivity {
                                                 Toast.makeText(CreatePost.this, "Post published", Toast.LENGTH_SHORT).show();
                                                 description.setText("");
                                                 image_uri = null;
-                                                startActivity(new Intent(CreatePost.this, ForumFragment.class));
+                                                startActivity(new Intent(CreatePost.this, Forum.class));
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
