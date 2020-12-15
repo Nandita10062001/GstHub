@@ -89,7 +89,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myviewholder> 
 
 
         try {
-            Picasso.get().load(pDp).placeholder(R.drawable.ic_graduation).into(holder.userDP);
+            Picasso.get().load(pDp).placeholder(R.drawable.ic_forumdp).into(holder.userDP);
         }
         catch (Exception e) {
 
