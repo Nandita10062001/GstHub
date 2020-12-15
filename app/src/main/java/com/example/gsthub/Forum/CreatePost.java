@@ -173,6 +173,7 @@ public class CreatePost extends AppCompatActivity {
                                 hashMap.put("pEmail", email);
                                 hashMap.put("pId", timeStamp);
                                 hashMap.put("pTitle", postTitle);
+                                hashMap.put("pLikes", "0");
                                 hashMap.put("pDescr", descrp);
                                 hashMap.put("pImage", downloadUri);
                                 hashMap.put("pTime", timeStamp);
@@ -220,6 +221,7 @@ public class CreatePost extends AppCompatActivity {
             hashMap.put("pEmail", email);
             hashMap.put("pId", timeStamp);
             hashMap.put("pTitle", postTitle);
+            hashMap.put("pLikes", "0");
             hashMap.put("pDescr", descrp);
             hashMap.put("pImage", "noImage");
             hashMap.put("pTime", timeStamp);

@@ -85,7 +85,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myviewholder> 
         holder.timeStamp.setText("Posted at "+pTime);
         holder.likes.setText(pLikes);
 
-        //setLikes(holder,pId);
+        setLikes(holder,pId);
 
 
         try {
@@ -108,66 +108,66 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myviewholder> 
             }
         }
 
-//        holder.upvoteBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//               final int pLikes = Integer.parseInt(postList.get(position).getpLikes());
-//               mProcessUpvote = true;
-//
-//               final String postIde = postList.get(position).getpId();
-//               upvotesRef.addValueEventListener(new ValueEventListener() {
-//                   @Override
-//                   public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                       if (mProcessUpvote) {
-//                           if (snapshot.child(postIde).hasChild(myUid)) {
-//                               postsRef.child(postIde).child("pLikes").setValue(""+(pLikes-1));
-//                               upvotesRef.child(postIde).child(myUid).removeValue();
-//                               mProcessUpvote = false;
-//                           }
-//                           else {
-//                               postsRef.child(postIde).child("pLikes").setValue(""+(pLikes+1));
-//                               upvotesRef.child(postIde).child(myUid).setValue("Upvoted");
-//                               mProcessUpvote = false;
-//                           }
-//                       }
-//
-//                   }
-//
-//                   @Override
-//                   public void onCancelled(@NonNull DatabaseError error) {
-//
-//                   }
-//               });
-//            }
-//        });
-//        holder.commentBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(context, "Comment", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        holder.upvoteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               final int pLikes = Integer.parseInt(postList.get(position).getpLikes());
+               mProcessUpvote = true;
+
+               final String postIde = postList.get(position).getpId();
+               upvotesRef.addValueEventListener(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                       if (mProcessUpvote) {
+                           if (snapshot.child(postIde).hasChild(myUid)) {
+                               postsRef.child(postIde).child("pLikes").setValue(""+(pLikes-1));
+                               upvotesRef.child(postIde).child(myUid).removeValue();
+                               mProcessUpvote = false;
+                           }
+                           else {
+                               postsRef.child(postIde).child("pLikes").setValue(""+(pLikes+1));
+                               upvotesRef.child(postIde).child(myUid).setValue("Upvoted");
+                               mProcessUpvote = false;
+                           }
+                       }
+
+                   }
+
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError error) {
+
+                   }
+               });
+            }
+        });
+        holder.commentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "Comment", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-//    private void setLikes(final myviewholder Holder, final String postKey) {
-//        upvotesRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.child(postKey).hasChild(myUid)) {
-//                    Holder.upvoteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_upvoted, 0, 0, 0);
-//                    Holder.upvoteBtn.setText("Upvoted");
-//                }
-//                else {
-//                    Holder.upvoteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_baseline_arrow_upward_24, 0, 0, 0);
-//                    Holder.upvoteBtn.setText("Upvote");
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//    }
+    private void setLikes(final myviewholder Holder, final String postKey) {
+        upvotesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child(postKey).hasChild(myUid)) {
+                    Holder.upvoteBtn.setImageResource(R.drawable.ic_upvoted);
+                    Holder.upvoteBtn.setTag("Upvoted");
+                }
+                else {
+                    Holder.upvoteBtn.setImageResource(R.drawable.ic_baseline_arrow_upward_24);
+                    Holder.upvoteBtn.setTag("Upvote");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
     @Override
     public int getItemCount() {
