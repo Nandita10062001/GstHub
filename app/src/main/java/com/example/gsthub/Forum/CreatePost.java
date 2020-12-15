@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.gsthub.HomePage;
 import com.example.gsthub.R;
 import com.example.gsthub.SignIn;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -47,6 +49,7 @@ public class CreatePost extends AppCompatActivity {
     ProgressDialog pd;
 
     Button PostBtn, imageBtn;
+    ImageView imageView;
     EditText title, description;
 
     String name, email, uid, dp;
@@ -80,6 +83,7 @@ public class CreatePost extends AppCompatActivity {
 
 
         pd = new ProgressDialog(this);
+
 
         cameraPermissions = new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -183,7 +187,7 @@ public class CreatePost extends AppCompatActivity {
                                                 Toast.makeText(CreatePost.this, "Post published", Toast.LENGTH_SHORT).show();
                                                 description.setText("");
                                                 image_uri = null;
-                                                startActivity(new Intent(CreatePost.this, Forum.class));
+                                                startActivity(new Intent(CreatePost.this, HomePage.class));
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
@@ -230,7 +234,7 @@ public class CreatePost extends AppCompatActivity {
                             Toast.makeText(CreatePost.this, "Post published", Toast.LENGTH_SHORT).show();
                             description.setText("");
                             image_uri = null;
-                            startActivity(new Intent(CreatePost.this, Forum.class));
+                            startActivity(new Intent(CreatePost.this, HomePage.class));
 
                         }
                     })
@@ -301,7 +305,8 @@ public class CreatePost extends AppCompatActivity {
 
     private void pickFromCamera() {
         ContentValues cv = new ContentValues();
-        cv.put(MediaStore.Images.Media.DESCRIPTION, "Temp Pick");
+        cv.put(MediaStore.Images.Media.TITLE, "Temp Pick");
+        cv.put(MediaStore.Images.Media.DESCRIPTION, "Temp Descr");
          image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, cv);
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -377,11 +382,10 @@ public class CreatePost extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             if (requestCode == IMAGE_PICK_GALLERY_CODE) {
                 image_uri = data.getData();
-                //imageBtn.setImageURI(image_uri);
+                //imageView.setImageURI(image_uri);
             }
             else if (requestCode == IMAGE_PICK_CAMERA_CODE) {
-                //imageBtn.setImageURI(image_uri);
-
+                //imageView.setImageURI(image_uri);
 
             }
         }

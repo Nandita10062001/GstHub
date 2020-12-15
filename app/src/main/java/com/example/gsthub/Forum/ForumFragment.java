@@ -41,6 +41,7 @@ public class ForumFragment extends Fragment {
      PostAdapter postAdapter;
      List<Post> postLists;
      ProgressDialog pd;
+     FloatingActionButton floatingActionButton;
 
     public ForumFragment() {
         // Required empty public constructor
@@ -50,6 +51,16 @@ public class ForumFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_forum, container, false);
+
+            floatingActionButton = view.findViewById(R.id.floatingactionbutton);
+            floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), CreatePost.class));
+                }
+            });
+
+
 
             auth = FirebaseAuth.getInstance();
 

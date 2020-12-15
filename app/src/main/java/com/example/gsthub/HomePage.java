@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 //        isGuest.getReference().child("Guest");
         NavigationView navigationView= findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         toolbar = (Toolbar)findViewById(R.id.toolbar) ;
         setSupportActionBar(toolbar);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
@@ -58,19 +60,20 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
 
+        if (savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new ForumFragment()).commit();
+            navigationView.setCheckedItem(R.id.Forum);}
 
     }
 
 
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.Forum:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ForumFragment()).commit();
-                break;
-            case R.id.Dashboard:
-                startActivity(new Intent(getApplicationContext(), Dashboard.class));
                 break;
             case R.id.Classroom:
                 startActivity(new Intent(getApplicationContext(), Classroom.class));
