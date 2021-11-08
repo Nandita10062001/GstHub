@@ -1,0 +1,11 @@
+# GstHub 👩‍🎓👩‍💻
+‘Gsthub – threading ties between Gstians’ is a forum mobile application specific to only SIES GST, where not only the students but also the teachers, alumni and guest users can participate actively in discussions, etc. Along with this, we have made a few additions to our app such as the classroom section and the dashboard section. The classroom section is made specifically for the SIES GST family. In this section, the teachers can post assignments, notes, etc. This will make it easier for the students to receive and keep track of all sorts of updates. The dashboard section will display the most popular posts that have been put up on our forum. This will keep the users informed about the most important and engaging discussions taking place in our college. The methodology adopted in our project is Rapid Application Development. The prototype mobile application is built in Android OS using Android Studio with Java Programming. The database used for our application is the Firebase Realtime Database and the authentication is carried out through Firebase as well.
+# Features ⚡ :
+1)	Login- Our application has the complete registration system, including sign in, create account, profile and edit profile. Here, the users can create an account as either a student, teacher, an alumni or a guest. We have also added the feature of sign in using google.
+2)	Forum- The app has a forum section where anyone can ask questions and get their queries solved, be it related to academics or other than that. The users can also post details regarding admissions, events or any other announcements. We have also provided an option to upload an image if necessary. We have also added the upvotes and comments features to the posts to track user engagement.
+3)	Dashboard- We will also be incorporating a Dashboard feature. This section will display the most popular posts that have been put up on our forum. This will keep the users informed about the most important and engaging discussions taking place in our college.
+4)	Classroom- It will also have a classroom section which is specific to only the students and teachers of SIES GST. It can be used by the teachers to post updates or to send notifications regarding assignments, notes, other important notices, etc.
+# Technologies Used 📊 :
+1) Java
+2) Firebase 
+3) Android Studio
